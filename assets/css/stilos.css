@@ -15,6 +15,17 @@
     --marca-agua-h: 5rem;
 }
 
+.hover-css {
+    width: 15rem;
+    height: 7rem;
+    background-color: lime;
+
+    background-image: var(--bg-img-galeria-1);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 .agua {
     &::before {
         position: fixed;
