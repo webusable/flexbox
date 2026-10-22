@@ -1,7 +1,15 @@
 :root {
     /* Colores del sitio */
-    --color-a: steelblue;
-    --color-a--hover: tomato;
+    --color-1: #aa3c39;
+    --color-2: #557714;
+    --color-3: #226666;
+    --color-4: #003133;
+
+    --color-texto: #666;
+    --bg-body: #fefefe;
+
+    --color-a: #557714;
+    --color-a--hover: #aa3c39;
 
     /* Imágenes del sitio  */
     --bg-img-portada: url("https://cdn.pixabay.com/photo/2020/02/09/13/08/banner-4833105_1280.jpg");
@@ -15,9 +23,42 @@
     --marca-agua-h: 5rem;
 }
 
+/* Underline From Center */
+/* .wu-underline */
+.wu-underline-from-center,
+a {
+    display: inline-block;
+    vertical-align: middle;
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        left: 51%;
+        right: 51%;
+        bottom: 0;
+        background: var(--color-a--hover);
+        height: 4px;
+        transition-property: left, right;
+        transition-duration: 0.3s;
+        transition-timing-function: ease-out;
+    }
+
+    &:hover::before,
+    &:focus::before,
+    &:active::before {
+        left: 0;
+        right: 0;
+    }
+}
+
 .hover-css {
-    width: 15rem;
-    height: 7rem;
+    width: 16rem;
+    height: 9rem;
     background-color: lime;
 
     background-image: var(--bg-img-galeria-1);
@@ -52,8 +93,26 @@ main > section > article {
     padding: 7.5vw;
 }
 
+/* Colores de los textos */
+
+body,
+p,
+li,
+span {
+    color: var(--color-texto);
+}
+
+h3 {
+    color: var(--color-1);
+}
+
 a {
     text-decoration: none;
+    color: var(--color-2);
+
+    &:hover {
+        color: var(--color-1);
+    }
 }
 
 /* Ejemplo de uso de la pseudoclase :not() */
@@ -66,17 +125,8 @@ ul:not(.enlaces-pdf)
 
 ul.enlaces-pdf {
     & li {
-        /* background-color: lime; */
         /* margin: 0.5em 0; */
         line-height: 2;
-
-        & a {
-            color: var(--color-a);
-
-            &:hover {
-                color: var(--color-a--hover);
-            }
-        }
     }
 }
 
