@@ -220,3 +220,36 @@ ul.galeria {
         background-image: var(--bg-img-galeria-5);
     }
 }
+
+.wu-button-queries {
+    padding: 4em 10em;
+    border-radius: 10px;
+
+    background: var(--color-1);
+    color: #fff;
+
+    &::before {
+        content: "@media (max-width: 599px)";
+    }
+}
+
+/* >= 600px de ancho del disposivo */
+@media (min-width: 600px) {
+    .wu-button-queries {
+        background: orange;
+
+        &::before {
+            content: "@media (min-width: 600px)";
+        }
+    }
+}
+
+@media (min-width: 1024px) {
+    .wu-button-queries {
+        background: blue;
+
+        &::before {
+            content: "@media (min-width: 1024px)";
+        }
+    }
+}
