@@ -82,6 +82,7 @@ a {
     background-color: lime;
 
     background-image: var(--bg-img-galeria-1);
+
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -369,6 +370,7 @@ ul.galeria {
 header.portada {
     &::before {
         background-image: var(--banner--medium);
+        filter: brightness(1) blur(2px) grayscale(0.8);
     }
 }
 
