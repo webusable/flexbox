@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="../assets/css/transitions.css">
+  <title>UF1303 | Transiciones CSS3</title>
+</head>
+
+<body>
+
+  <article class="transiciones">
+
+    <header>
+      <h1>Transiciones CSS3</h1>
+      <p>Pasa el ratón por encima de cada demo (o usa la tecla Tab en las que son botones o enlaces). Después abre el
+        CSS de esta página y busca la clase del ejercicio: está todo comentado.</p>
+      <p><strong>Recuerda la fórmula:</strong> un cambio de estado (normalmente <code>:hover</code>) + una declaración
+        <code>transition</code> escrita en el <em>estado base</em>.
+      </p>
+    </header>
+
+    <!-- ===== EJERCICIO 1 ===== -->
+    <section>
+      <h2>1. width: ensanchar una barra</h2>
+      <p>Pasa de 120 px a 320 px en 0,4 segundos. Es la transición más sencilla: una propiedad, una duración y una
+        curva.</p>
+      <div class="demo">
+        <div class="e1">Pasa el ratón</div>
+      </div>
+      <pre><code>.e1 { width: 120px; transition: width .4s ease; }
+.e1:hover { width: 320px; }</code></pre>
+      <p class="pista">Prueba: cambia <code>.4s</code> por <code>2s</code> y fíjate en cómo se nota la curva
+        <code>ease</code>.
+      </p>
+    </section>
+
+    <!-- ===== EJERCICIO 2 ===== -->
+    <section>
+      <h2>2. height: un panel que se despliega</h2>
+      <p>La altura se anima de 60 px a 170 px. Para que funcione, los dos valores deben ser números:
+        <code>height: auto</code> no se puede animar. El <code>overflow: hidden</code> esconde el texto que todavía no
+        cabe.
+      </p>
+      <div class="demo">
+        <div class="e2"><strong>Panel</strong>
+          <p>Este texto aparece al crecer la caja. Es el truco básico de los desplegables.</p>
+        </div>
+      </div>
+      <p class="pista">Prueba: añade <code>transition-delay: .3s</code> y observa cómo espera antes de empezar.</p>
+    </section>
+
+    <!-- ===== EJERCICIO 3 ===== -->
+    <section>
+      <h2>3. opacity: desvanecer</h2>
+      <p>La opacidad va de 1 (opaco) a 0,15 (casi transparente). Junto con <code>transform</code>, es la propiedad más
+        recomendable para animar porque el navegador la dibuja con muy poco esfuerzo.</p>
+      <div class="demo">
+        <div class="e3">Me desvanezco</div>
+      </div>
+      <p class="pista">Prueba: pon <code>opacity: 0</code> en el hover. El elemento desaparece a la vista, pero sigue
+        ocupando su sitio y recibiendo clics.</p>
+    </section>
+
+    <!-- ===== EJERCICIO 4 ===== -->
+    <section>
+      <h2>4. color: un enlace que cambia de tono</h2>
+      <p>El color del texto se anima igual que cualquier número: el navegador calcula todos los tonos intermedios entre
+        el azul oscuro y el rojo.</p>
+      <div class="demo"><a href="#" class="e4">Enlace de ejemplo</a></div>
+      <p class="pista">Prueba: añade también <code>:active</code> con otro color y haz clic y mantén pulsado.</p>
+    </section>
+
+    <!-- ===== EJERCICIO 5 ===== -->
+    <section>
+      <h2>5. background-color: botón que se rellena</h2>
+      <p>Aquí animamos dos propiedades a la vez, separándolas con una coma: el fondo y el color del texto.</p>
+      <div class="demo"><button class="e5" type="button">Rellenar</button></div>
+      <pre><code>transition: background-color .3s ease, color .3s ease;</code></pre>
+      <p class="pista">Prueba: cambia solo <code>background-color</code> en la transición y deja <code>color</code>
+        fuera. El texto saltará de golpe.</p>
+    </section>
+
+    <!-- ===== EJERCICIO 6 ===== -->
+    <section>
+      <h2>6. transform: mover, girar y escalar</h2>
+      <p>Tres cajas con la misma transición y distinta función de <code>transform</code>. A diferencia de
+        <code>width</code> o <code>margin</code>, <code>transform</code> no empuja a los elementos vecinos.
+      </p>
+      <div class="demo">
+        <div class="e6 mover">translate</div>
+        <div class="e6 girar">rotate</div>
+        <div class="e6 crecer">scale</div>
+      </div>
+      <p class="pista">Prueba: combina varias funciones en una sola línea, por ejemplo
+        <code>transform: rotate(45deg) scale(1.2);</code>.
+      </p>
+    </section>
+
+    <!-- ===== EJERCICIO 7 ===== -->
+    <section>
+      <h2>7. left y top: recorrer un escenario</h2>
+      <p>Pasa el ratón por el recuadro: la bola viaja hasta la esquina contraria. Para animar <code>left</code> y
+        <code>top</code> el elemento necesita <code>position</code> distinto de <code>static</code>.
+      </p>
+      <div class="demo">
+        <div class="e7">
+          <div class="bola"></div>
+        </div>
+      </div>
+      <p class="pista">Prueba: quita <code>position: absolute</code> de <code>.bola</code> y comprueba que deja de
+        moverse.</p>
+    </section>
+
+    <!-- ===== EJERCICIO 8 ===== -->
+    <section>
+      <h2>8. font-size: texto que crece</h2>
+      <p>El tamaño de letra cambia de 1rem a 2,4rem. Funciona, pero como altera el tamaño de la caja, el contenido de
+        alrededor se reacomoda. Úsalo con moderación.</p>
+      <div class="demo">
+        <div class="e8">Haz crecer este texto</div>
+      </div>
+      <p class="pista">Prueba: alternativa más fluida con <code>transform: scale(1.5)</code>. Compara las dos.</p>
+    </section>
+
+    <!-- ===== EJERCICIO 9 ===== -->
+    <section>
+      <h2>9. letter-spacing: abrir las letras</h2>
+      <p>El espacio entre letras pasa de 0 a 0,35em. Se usa mucho en menús y botones. Se mide en <code>em</code> para
+        que escale con el tamaño del texto.</p>
+      <div class="demo">
+        <div class="e9">ESPACIADO</div>
+      </div>
+      <p class="pista">Prueba: valores negativos, como <code>-0.05em</code>, para juntar las letras.</p>
+    </section>
+
+    <!-- ===== EJERCICIO 10 ===== -->
+    <section>
+      <h2>10. box-shadow: elevar una tarjeta</h2>
+      <p>La sombra pasa de casi plana a «flotando», y la tarjeta sube 6 px. Para que <code>box-shadow</code> se anime
+        con suavidad, las dos sombras deben tener la misma estructura: mismos valores y en el mismo orden.</p>
+      <div class="demo">
+        <div class="e10">Tarjeta con sombra</div>
+      </div>
+      <p class="pista">Prueba: añade una segunda sombra en ambos estados (la inicial puede ser
+        <code>0 0 0 transparent</code>).
+      </p>
+    </section>
+
+    <!-- ===== EJERCICIO 11 ===== -->
+    <section>
+      <h2>11. Reto: efecto escalonado con transition-delay</h2>
+      <p>Pasa el ratón por el grupo. Todos los cuadrados hacen la misma transición (posición, giro, color y forma), pero
+        cada uno empieza 0,1 s después que el anterior, usando <code>:nth-child()</code>.</p>
+      <div class="demo">
+        <div class="e11"><span></span><span></span><span></span><span></span></div>
+      </div>
+      <div class="reto">
+        <strong>Tus retos:</strong>
+        <ol>
+          <li>Añade un quinto cuadrado y su retardo de 0,4 s.</li>
+          <li>Haz que el efecto se invierta al salir (pista: pon los <code>transition-delay</code> distintos en el
+            estado base y en el <code>:hover</code>).</li>
+          <li>Cambia la curva por <code>cubic-bezier(.68,-.55,.27,1.55)</code> para conseguir un rebote.</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===== RESUMEN ===== -->
+    <section>
+      <h2>Resumen: qué se puede animar</h2>
+      <div class="tabla">
+        <table>
+          <thead>
+            <tr>
+              <th>Propiedad</th>
+              <th>Tipo de valor</th>
+              <th>Nota</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>width</code>, <code>height</code></td>
+              <td>Longitud</td>
+              <td>No se anima desde o hacia <code>auto</code>.</td>
+            </tr>
+            <tr>
+              <td><code>opacity</code></td>
+              <td>Número (0 a 1)</td>
+              <td>Muy fluida.</td>
+            </tr>
+            <tr>
+              <td><code>color</code>, <code>background-color</code></td>
+              <td>Color</td>
+              <td>El navegador mezcla los tonos intermedios.</td>
+            </tr>
+            <tr>
+              <td><code>transform</code></td>
+              <td>Funciones (translate, rotate, scale)</td>
+              <td>La más recomendable para movimiento.</td>
+            </tr>
+            <tr>
+              <td><code>left</code>, <code>top</code></td>
+              <td>Longitud</td>
+              <td>Requieren <code>position</code>.</td>
+            </tr>
+            <tr>
+              <td><code>font-size</code>, <code>letter-spacing</code></td>
+              <td>Longitud</td>
+              <td>Pueden reordenar el contenido vecino.</td>
+            </tr>
+            <tr>
+              <td><code>box-shadow</code></td>
+              <td>Longitudes y color</td>
+              <td>Misma estructura en ambos estados.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Como norma, anima <code>transform</code> y <code>opacity</code> siempre que puedas, y evita
+        <code>transition: all</code>: enumera las propiedades que realmente quieres animar.
+      </p>
+    </section>
+
+  </article>
+
+</body>
+
+</html>

@@ -1,0 +1,355 @@
+/* ===================================================================
+   EJERCICIOS DE TRANSICIONES CSS3 (sin JavaScript)
+   Todo el CSS cuelga de la clase .transiciones para que no
+   choque con los estilos del resto de la web del proyecto de UF.
+   =================================================================== */
+
+body {
+  margin: 0;
+  background: #f4f6fb;
+  font-family: system-ui, sans-serif;
+  color: #14213d;
+}
+
+/* ---------- Estilos generales del artículo ---------- */
+.transiciones {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 2rem 1rem 4rem;
+  line-height: 1.65;
+}
+.transiciones h1 {
+  margin: 0 0 0.5rem;
+}
+.transiciones h2 {
+  margin: 2.5rem 0 0.3rem;
+  padding-top: 1rem;
+  border-top: 2px solid #d9deea;
+}
+.transiciones p {
+  margin: 0.5rem 0;
+}
+.transiciones code {
+  background: #e3e9ff;
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+.transiciones pre {
+  background: #101a33;
+  color: #e6ecff;
+  padding: 0.9rem 1rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+.transiciones pre code {
+  background: none;
+  padding: 0;
+}
+
+/* Caja donde se ve cada demo */
+.transiciones .demo {
+  background: #fff;
+  border: 1px solid #d9deea;
+  border-radius: 12px;
+  padding: 1.2rem;
+  margin: 1rem 0;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  min-height: 120px;
+}
+.transiciones .pista {
+  font-size: 0.85rem;
+  color: #55607a;
+  margin-top: 0.3rem;
+}
+.transiciones .reto {
+  border-left: 4px solid #ffc857;
+  background: #fff8e6;
+  padding: 0.3rem 1rem;
+  border-radius: 0 8px 8px 0;
+  margin: 1rem 0;
+}
+
+/* Tabla resumen */
+.transiciones table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 0.92rem;
+}
+.transiciones th,
+.transiciones td {
+  text-align: left;
+  padding: 0.5rem;
+  border-bottom: 1px solid #d9deea;
+  vertical-align: top;
+}
+.transiciones .tabla {
+  overflow-x: auto;
+}
+
+/* ============================================================
+   EJERCICIO 1 · width
+   La barra se ensancha al pasar el ratón.
+   ============================================================ */
+.transiciones .e1 {
+  width: 120px; /* estado inicial */
+  height: 44px;
+  background: #2f5bff;
+  border-radius: 8px;
+  color: #fff;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  transition: width 0.4s ease; /* ← la transición va en el estado BASE */
+}
+.transiciones .e1:hover {
+  width: 320px;
+} /* estado final */
+
+/* ============================================================
+   EJERCICIO 2 · height
+   Un panel que "se despliega". Ojo: height necesita un valor
+   numérico en AMBOS estados (de 60px a 160px sí; de auto no).
+   ============================================================ */
+.transiciones .e2 {
+  width: 200px;
+  height: 60px;
+  overflow: hidden; /* oculta el contenido que aún no cabe */
+  background: #0f766e;
+  color: #fff;
+  border-radius: 8px;
+  padding: 0.8rem;
+  transition: height 0.5s ease-in-out;
+}
+.transiciones .e2:hover {
+  height: 170px;
+}
+
+/* ============================================================
+   EJERCICIO 3 · opacity
+   Desvanecer un elemento. Es de las propiedades más fluidas.
+   ============================================================ */
+.transiciones .e3 {
+  width: 200px;
+  height: 80px;
+  border-radius: 10px;
+  background: #7c3aed;
+  color: #fff;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  opacity: 1;
+  transition: opacity 0.6s ease;
+}
+.transiciones .e3:hover {
+  opacity: 0.15;
+}
+
+/* ============================================================
+   EJERCICIO 4 · color (color del texto)
+   ============================================================ */
+.transiciones .e4 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #14213d;
+  text-decoration: none;
+  transition: color 0.4s ease;
+}
+.transiciones .e4:hover,
+.transiciones .e4:focus-visible {
+  color: #e11d48;
+}
+
+/* ============================================================
+   EJERCICIO 5 · background-color
+   Un botón que cambia de color de fondo. Fíjate en que el texto
+   también cambia, así que animamos las dos propiedades a la vez.
+   ============================================================ */
+.transiciones .e5 {
+  border: 2px solid #14213d;
+  border-radius: 8px;
+  padding: 0.8rem 1.6rem;
+  font:
+    700 1rem system-ui,
+    sans-serif;
+  cursor: pointer;
+  background-color: transparent;
+  color: #14213d;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease; /* dos propiedades, separadas por comas */
+}
+.transiciones .e5:hover,
+.transiciones .e5:focus-visible {
+  background-color: #14213d;
+  color: #fff;
+}
+
+/* ============================================================
+   EJERCICIO 6 · transform
+   La propiedad estrella: mover, girar y escalar sin romper el
+   diseño (no empuja a los demás elementos) y va muy fluida.
+   Tres cajas, tres funciones: translate, rotate y scale.
+   ============================================================ */
+.transiciones .e6 {
+  width: 80px;
+  height: 80px;
+  border-radius: 12px;
+  background: #f59e0b;
+  color: #14213d;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  transition: transform 0.4s ease-out;
+}
+.transiciones .e6.mover:hover {
+  transform: translateY(-20px);
+} /* sube 20px */
+.transiciones .e6.girar:hover {
+  transform: rotate(135deg);
+} /* gira 135 grados */
+.transiciones .e6.crecer:hover {
+  transform: scale(1.3);
+} /* 130 % de su tamaño */
+
+/* ============================================================
+   EJERCICIO 7 · left / top
+   Para animar left y top el elemento DEBE tener position
+   (absolute, relative, fixed...). Si no, no pasa nada.
+   El que recibe el ratón es el escenario (.e7); el que se
+   mueve es su hijo (.e7 .bola).
+   ============================================================ */
+.transiciones .e7 {
+  position: relative; /* el escenario es la referencia del hijo absoluto */
+  width: 100%;
+  max-width: 360px;
+  height: 130px;
+  background: #eef2ff;
+  border: 2px dashed #9aa8d4;
+  border-radius: 10px;
+}
+.transiciones .e7 .bola {
+  position: absolute; /* ← imprescindible */
+  left: 10px;
+  top: 10px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #2f5bff;
+  transition:
+    left 0.8s ease,
+    top 0.8s ease;
+}
+.transiciones .e7:hover .bola {
+  left: calc(100% - 54px);
+  top: calc(100% - 54px);
+} /* va a la esquina contraria */
+
+/* ============================================================
+   EJERCICIO 8 · font-size
+   El texto crece suavemente. Cuidado: cambia el tamaño de la
+   caja y puede mover lo que haya alrededor.
+   ============================================================ */
+.transiciones .e8 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #0f766e;
+  transition: font-size 0.35s ease;
+}
+.transiciones .e8:hover {
+  font-size: 2.4rem;
+}
+
+/* ============================================================
+   EJERCICIO 9 · letter-spacing
+   El espacio entre letras se abre. Muy usado en menús y botones.
+   ============================================================ */
+.transiciones .e9 {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #14213d;
+  letter-spacing: 0;
+  transition: letter-spacing 0.5s ease;
+}
+.transiciones .e9:hover {
+  letter-spacing: 0.35em;
+}
+
+/* ============================================================
+   EJERCICIO 10 · box-shadow
+   Una sombra puede animarse si ambas tienen la misma estructura
+   (mismo número de valores). Aquí pasamos de "sin elevación"
+   a "flotando".
+   ============================================================ */
+.transiciones .e10 {
+  width: 190px;
+  height: 100px;
+  border-radius: 12px;
+  padding: 1rem;
+  background: #fff;
+  border: 1px solid #d9deea;
+  font-weight: 700;
+  box-shadow: 0 1px 2px rgba(20, 33, 61, 0.15); /* estado inicial: casi plana */
+  transition:
+    box-shadow 0.3s ease-out,
+    transform 0.3s ease-out;
+}
+.transiciones .e10:hover {
+  box-shadow: 0 18px 30px rgba(20, 33, 61, 0.28); /* misma estructura, otros valores */
+  transform: translateY(-6px);
+}
+
+/* ============================================================
+   EJERCICIO 11 · RETO FINAL · todo junto + transition-delay
+   Cuatro cuadrados que se transforman uno detrás de otro.
+   Cada uno tiene un retardo (delay) distinto: efecto escalonado.
+   ============================================================ */
+.transiciones .e11 {
+  display: flex;
+  gap: 0.8rem;
+}
+.transiciones .e11 span {
+  width: 56px;
+  height: 56px;
+  border-radius: 10px;
+  background: #2f5bff;
+  /* propiedad | duración | curva  (el retardo se pone abajo, uno por uno) */
+  transition:
+    transform 0.4s ease-out,
+    background-color 0.4s ease-out,
+    border-radius 0.4s ease-out;
+}
+.transiciones .e11:hover span {
+  transform: translateY(-18px) rotate(45deg);
+  background-color: #e11d48;
+  border-radius: 50%;
+}
+.transiciones .e11 span:nth-child(1) {
+  transition-delay: 0s;
+}
+.transiciones .e11 span:nth-child(2) {
+  transition-delay: 0.1s;
+}
+.transiciones .e11 span:nth-child(3) {
+  transition-delay: 0.2s;
+}
+.transiciones .e11 span:nth-child(4) {
+  transition-delay: 0.3s;
+}
+
+/* ============================================================
+   ACCESIBILIDAD
+   Si la persona ha pedido "reducir movimiento" en su sistema,
+   dejamos los cambios prácticamente instantáneos.
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  .transiciones * {
+    transition-duration: 0.01ms !important;
+    transition-delay: 0s !important;
+  }
+}
