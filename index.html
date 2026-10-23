@@ -21,9 +21,10 @@
     <!-- Hojas de estilos de terceros -->
 
     <!-- Hover.css de ianlunn.github.io -->
-    <link rel="stylesheet" href="assets/css/hover.css" />
+    <!-- <link rel="stylesheet" href="assets/css/hover.css" /> -->
 
     <!-- Ruta a nuestras hojas de estilos -->
+    <link rel="stylesheet" href="assets/css/carrousel.css">
     <link rel="stylesheet" href="assets/css/visibilidad.css" />
     <link rel="stylesheet" href="assets/css/stilos.css" />
 
@@ -33,7 +34,21 @@
 
 <body>
     <header></header>
-    <nav></nav>
+    <nav class="pechado">
+        <h2>Menú principal</h2>
+        <ul>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Temas</a>
+                <ul>
+                    <li><a href="#">HTML5</a></li>
+                    <li><a href="#">CSS3</a></li>
+                    <li><a href="#">JavaScript</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Nosotros</a></li>
+            <li><a href="#">Contacto</a></li>
+        </ul>
+    </nav>
     <main class="agua">
         <section>
             <header class="img-before portada">
@@ -167,6 +182,43 @@
                     <li>
                         <figure class="img-before diapositiva-5">
                             <figcaption>Foto 5</figcaption>
+                        </figure>
+                    </li>
+                </ul>
+            </article>
+
+            <article class="galeria-animada pechado">
+                <h2>Galería de imágenes</h2>
+                <p>Animación carrousel de imágenes</p>
+
+                <ul class="carrousel">
+                    <li>
+                        <figure class="diapositiva-1">
+                            <figcaption>Ciudad 1</figcaption>
+                        </figure>
+                    </li>
+
+                    <li>
+                        <figure class="diapositiva-2">
+                            <figcaption>Ciudad 2</figcaption>
+                        </figure>
+                    </li>
+
+                    <li>
+                        <figure class="diapositiva-3">
+                            <figcaption>Ciudad 3</figcaption>
+                        </figure>
+                    </li>
+
+                    <li>
+                        <figure class="diapositiva-4">
+                            <figcaption>Ciudad 4</figcaption>
+                        </figure>
+                    </li>
+
+                    <li>
+                        <figure class="diapositiva-5">
+                            <figcaption>Ciudad 5</figcaption>
                         </figure>
                     </li>
                 </ul>
