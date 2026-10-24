@@ -1,121 +1,194 @@
+@charset "UTF-8";
+
 :root {
-  --bg-img-galeria-1: url("https://cdn.pixabay.com/photo/2017/11/11/21/55/freedom-2940655_1280.jpg");
-  --bg-img-galeria-2: url("https://cdn.pixabay.com/photo/2016/11/13/12/52/kuala-lumpur-1820944_1280.jpg");
-  --bg-img-galeria-3: url("https://cdn.pixabay.com/photo/2018/05/09/22/51/blue-sky-3386409_1280.jpg");
-  --bg-img-galeria-4: url("https://cdn.pixabay.com/photo/2020/10/02/21/06/dome-5622133_1280.jpg");
-  --bg-img-galeria-5: url("https://cdn.pixabay.com/photo/2020/06/28/00/04/chicago-5347435_1280.jpg");
+    --carrousel-1--origin: url("https://dummyimage.com/300x200/6A5ACD/FFFFFF&text=1920+x+1280");
+    --carrousel-1--large: url("https://dummyimage.com/300x200/6A5ACD/FFFFFF&text=1024+x+683");
+    --carrousel-1--medium-large: url("https://dummyimage.com/300x200/6A5ACD/FFFFFF&text=768+x+512");
+    --carrousel-1--medium: url("https://dummyimage.com/300x200/6A5ACD/FFFFFF&text=480+x+320");
+    --carrousel-1--thumb: url("https://dummyimage.com/300x200/6A5ACD/FFFFFF&text=300+x+200");
+
+    --carrousel-2--origin: url("https://dummyimage.com/300x200/6B8E23/FFFFFF&text=1920+x+1280");
+    --carrousel-2--large: url("https://dummyimage.com/300x200/6B8E23/FFFFFF&text=1024+x+683");
+    --carrousel-2--medium-large: url("https://dummyimage.com/300x200/6B8E23/FFFFFF&text=768+x+512");
+    --carrousel-2--medium: url("https://dummyimage.com/300x200/6B8E23/FFFFFF&text=480+x+320");
+    --carrousel-2--thumb: url("https://dummyimage.com/300x200/6B8E23/FFFFFF&text=300+x+200");
+
+    --carrousel-3--origin: url("https://dummyimage.com/300x200/B22222/FFFFFF&text=1920+x+1280");
+    --carrousel-3--large: url("https://dummyimage.com/300x200/B22222/FFFFFF&text=1024+x+683");
+    --carrousel-3--medium-large: url("https://dummyimage.com/300x200/B22222/FFFFFF&text=768+x+512");
+    --carrousel-3--medium: url("https://dummyimage.com/300x200/B22222/FFFFFF&text=480+x+320");
+    --carrousel-3--thumb: url("https://dummyimage.com/300x200/B22222/FFFFFF&text=300+x+200");
+
+    --carrousel-4--origin: url("https://dummyimage.com/300x200/BDB76B/FFFFFF&text=1920+x+1280");
+    --carrousel-4--large: url("https://dummyimage.com/300x200/BDB76B/FFFFFF&text=1024+x+683");
+    --carrousel-4--medium-large: url("https://dummyimage.com/300x200/BDB76B/FFFFFF&text=768+x+512");
+    --carrousel-4--medium: url("https://dummyimage.com/300x200/BDB76B/FFFFFF&text=480+x+320");
+    --carrousel-4--thumb: url("https://dummyimage.com/300x200/BDB76B/FFFFFF&text=300+x+200");
+
+    --carrousel-5--origin: url("https://dummyimage.com/300x200/808080/FFFFFF&text=1920+x+1280");
+    --carrousel-5--large: url("https://dummyimage.com/300x200/808080/FFFFFF&text=1024+x+683");
+    --carrousel-5--medium-large: url("https://dummyimage.com/300x200/808080/FFFFFF&text=768+x+512");
+    --carrousel-5--medium: url("https://dummyimage.com/300x200/808080/FFFFFF&text=480+x+320");
+    --carrousel-5--thumb: url("https://dummyimage.com/300x200/808080/FFFFFF&text=300+x+200");
+
+    --ratio-galeria: 9/6;
+    --h-carrousel: 50vh;
 }
 
-/* --- Contenedores generales --- */
-section {
-  width: 100%;
-  padding: 2rem 1rem;
-  box-sizing: border-box;
+/* 
+    -------- Regla repetida -------
+
+    Ya existe en la hoja de estilos del proyecto
+    Mejor que sobre que falte
+    Además así se entiende la lógiga de los ::before
+*/
+
+/*
+.img-before {
+    position: relative;
+    background-color: #222;
+
+    &::before {
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+}
+*/
+
+/* Maquetación */
+article.carrousel-container {
+    min-height: 100vh;
+
+    & ul.carrousel {
+        /* Colocar todas las imágenes en la misma fila */
+        display: flex;
+        width: 100%;
+        height: var(--h-carrousel);
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+
+        list-style: none;
+
+        border-radius: 0.8rem;
+        box-shadow: 1em 1em 2em rgba(0, 0, 0, 0.5);
+
+        & li {
+            width: 100%;
+            height: 100%;
+
+            /* Evita que los li se encojan dentro del contenedor flex */
+            flex-shrink: 0;
+
+            & figure {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
 }
 
-article.galeria-animada {
-  max-width: 800px;
-  margin: 0 auto;
-  text-align: center;
+/* Textos */
+
+article.carrousel-container {
+    text-align: center;
+
+    ul.carrousel {
+        & li {
+            & figure {
+                /* Propiedad repetida, ya se declaró para posicionar el ::before */
+                position: relative;
+
+                & figcaption {
+                    /* Ubicar el texto abajo centrado */
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+
+                    padding: 1.5em;
+                    padding-bottom: 2em;
+
+                    /* Degradado de negro a nada desde abajo */
+                    background: linear-gradient(to top, #00000080, transparent);
+                    color: #fff;
+                }
+            }
+        }
+    }
 }
 
-/* --- Contenedor del carrusel (Flexbox aplicado aquí) --- */
+/* Imágenes del carrousel */
+
+article.carrousel-container {
+    ul.carrousel {
+        /* Se comienza diseñando para el viewport menor*/
+        & li:nth-child(1) figure::before {
+            background-image: var(--carrousel-1--thumb);
+        }
+        & li:nth-child(2) figure::before {
+            background-image: var(--carrousel-2--thumb);
+        }
+        & li:nth-child(3) figure::before {
+            background-image: var(--carrousel-3--thumb);
+        }
+        & li:nth-child(4) figure::before {
+            background-image: var(--carrousel-4--thumb);
+        }
+        & li:nth-child(5) figure::before {
+            background-image: var(--carrousel-5--thumb);
+        }
+    }
+}
+
+/* Animación */
+
 ul.carrousel {
-  /* Alinea los elementos li en fila horizontalmente */
-  display: flex;
-  position: relative;
-  padding: 0;
-  margin: 0;
-  width: 100%;
-  height: 30rem;
+    & li {
+        /* Nombre duración y curva */
+        animation: wuSimpleCarrousel 20s infinite ease-in-out;
 
-  overflow: hidden;
+        /* Avisa al navegador para que use la aceleración por GPU */
+        will-change: transform;
+    }
 
-  list-style: none;
-  border-radius: 12px;
-  box-shadow: 1em 1em 2em rgba(0, 0, 0, 0.5);
-}
-
-/* Pausar animación al pasar el cursor sobre la galería */
-ul.carrousel:hover li {
-  animation-play-state: paused;
-}
-
-/* --- Elementos de la lista --- */
-ul.carrousel > li {
-  width: 100%;
-  height: 100%;
-
-  /* Evita que los li se encojan dentro del contenedor flex */
-  flex-shrink: 0;
-
-  /* Nombre + Animación de desplazamiento */
-  animation: wuSimpleCarrousel 20s infinite ease-in-out;
-  will-change: transform;
-}
-
-/* --- Figuras e imágenes de fondo --- */
-ul.carrousel figure {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  position: relative;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-/* Asignación individual de imágenes mediante nth-child */
-ul.carrousel li:nth-child(1) figure {
-  background-image: var(--bg-img-galeria-1);
-}
-ul.carrousel li:nth-child(2) figure {
-  background-image: var(--bg-img-galeria-2);
-}
-ul.carrousel li:nth-child(3) figure {
-  background-image: var(--bg-img-galeria-3);
-}
-ul.carrousel li:nth-child(4) figure {
-  background-image: var(--bg-img-galeria-4);
-}
-ul.carrousel li:nth-child(5) figure {
-  background-image: var(--bg-img-galeria-5);
-}
-
-/* --- Leyendas de las ciudades --- */
-ul.carrousel figcaption {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 1.5rem 1rem;
-  background: linear-gradient(transparent, rgba(0, 0, 0, 0.75));
-  color: #ffffff;
+    &:hover li {
+        /* Pausar animación al pasar el cursor sobre la galería */
+        animation-play-state: paused;
+    }
 }
 
 /* --- Keyframes para el desplazamiento con Flexbox --- */
 @keyframes wuSimpleCarrousel {
-  0%,
-  15% {
-    transform: translate3d(0%, 0, 0);
-  }
-  20%,
-  35% {
-    transform: translate3d(-100%, 0, 0);
-  }
-  40%,
-  55% {
-    transform: translate3d(-200%, 0, 0);
-  }
-  60%,
-  75% {
-    transform: translate3d(-300%, 0, 0);
-  }
-  80%,
-  95% {
-    transform: translate3d(-400%, 0, 0);
-  }
-  100% {
-    transform: translate3d(0%, 0, 0);
-  }
+    0%,
+    15% {
+        transform: translate3d(0%, 0, 0);
+    }
+    20%,
+    35% {
+        transform: translate3d(-100%, 0, 0);
+    }
+    40%,
+    55% {
+        transform: translate3d(-200%, 0, 0);
+    }
+    60%,
+    75% {
+        transform: translate3d(-300%, 0, 0);
+    }
+    80%,
+    95% {
+        transform: translate3d(-400%, 0, 0);
+    }
+    100% {
+        transform: translate3d(0%, 0, 0);
+    }
 }

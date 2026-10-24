@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 :root {
     /* Colores del sitio */
     --color-1: #aa3c39;
@@ -11,28 +13,36 @@
     --color-a: #557714;
     --color-a--hover: #aa3c39;
 
+    --bg-color--images: #222;
+    -
+
     /* Imágenes del sitio  */
     --banner--origin: url("../img/banner-origin.webp");
     --banner--large: url("../img/banner-large.webp");
     --banner--medium: url("../img/banner-medium.webp");
     --banner--thumb: url("../img/banner-thumb.webp");
 
+    --galeria-1--origin: url("../img/libertad-origin.webp");
     --galeria-1--large: url("../img/libertad-large.webp");
     --galeria-1--medium: url("../img/libertad-medium.webp");
     --galeria-1--thumb: url("../img/libertad-thumb.webp");
 
+    --galeria-2--origin: url("../img/bilbao-origin.webp");
     --galeria-2--large: url("../img/bilbao-large.webp");
     --galeria-2--medium: url("../img/bilbao-medium.webp");
     --galeria-2--thumb: url("../img/bilbao-thumb.webp");
 
+    --galeria-3--origin: url("../img/chicago-origin.webp");
     --galeria-3--large: url("../img/chicago-large.webp");
     --galeria-3--medium: url("../img/chicago-medium.webp");
     --galeria-3--thumb: url("../img/chicago-thumb.webp");
 
+    --galeria-4--origin: url("../img/dome-origin.webp");
     --galeria-4--large: url("../img/dome-large.webp");
     --galeria-4--medium: url("../img/dome-medium.webp");
     --galeria-4--thumb: url("../img/dome-thumb.webp");
 
+    --galeria-5--origin: url("../img/kuala-lumpur-origin.webp");
     --galeria-5--large: url("../img/kuala-lumpur-large.webp");
     --galeria-5--medium: url("../img/kuala-lumpur-medium.webp");
     --galeria-5--thumb: url("../img/kuala-lumpur-thumb.webp");
@@ -43,8 +53,11 @@
     --marca-agua-h: 5rem;
 }
 
-/* Underline From Center */
-/* .wu-underline */
+/* 
+    --- Class: Underline From Center ---
+        by Hover.css
+*/
+
 .wu-underline-from-center,
 a {
     display: inline-block;
@@ -76,12 +89,16 @@ a {
     }
 }
 
+/* 
+    --- Clase de pruebas para la librería Hover.css
+*/
+
 .hover-css {
     width: 16rem;
     height: 9rem;
     background-color: lime;
 
-    background-image: var(--bg-img-galeria-1);
+    background-image: var(--galeria-1--thumb);
 
     background-position: center;
     background-size: cover;
@@ -90,6 +107,11 @@ a {
 
 .agua {
     &::before {
+        /* 
+            --- Position: fixed;
+            --- Fija el elemento al viewport, no importa el elemento contenedor 
+        */
+
         position: fixed;
         content: "";
         width: calc(var(--marca-agua-h) * var(--logo-ratio));
@@ -105,6 +127,8 @@ a {
         opacity: 0.2;
     }
 }
+
+/* Maquetación básica */
 
 main {
     min-height: 100vh;
@@ -174,7 +198,7 @@ header.portada {
 }
 
 .img-before {
-    background-color: blue;
+    background-color: #222;
     position: relative;
 
     &::before {
@@ -402,6 +426,7 @@ header.portada {
     article.galeria-flex {
         background-color: tomato;
     }
+    /* ul.carrousel, */
     ul.galeria {
         & .diapositiva-1 {
             &::before {
