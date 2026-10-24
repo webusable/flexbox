@@ -1,37 +1,39 @@
 @charset "UTF-8";
 
 :root {
-    --carrousel-1--origin: url("https://dummyimage.com/300x200/6A5ACD/FFFFFF&text=1920+x+1280");
-    --carrousel-1--large: url("https://dummyimage.com/300x200/6A5ACD/FFFFFF&text=1024+x+683");
-    --carrousel-1--medium-large: url("https://dummyimage.com/300x200/6A5ACD/FFFFFF&text=768+x+512");
-    --carrousel-1--medium: url("https://dummyimage.com/300x200/6A5ACD/FFFFFF&text=480+x+320");
-    --carrousel-1--thumb: url("https://dummyimage.com/300x200/6A5ACD/FFFFFF&text=300+x+200");
+    /* Imágenes obtenidas gracias a https://pixfill.dev/ */
 
-    --carrousel-2--origin: url("https://dummyimage.com/300x200/6B8E23/FFFFFF&text=1920+x+1280");
-    --carrousel-2--large: url("https://dummyimage.com/300x200/6B8E23/FFFFFF&text=1024+x+683");
-    --carrousel-2--medium-large: url("https://dummyimage.com/300x200/6B8E23/FFFFFF&text=768+x+512");
-    --carrousel-2--medium: url("https://dummyimage.com/300x200/6B8E23/FFFFFF&text=480+x+320");
-    --carrousel-2--thumb: url("https://dummyimage.com/300x200/6B8E23/FFFFFF&text=300+x+200");
+    --carrousel-1--origin: url("https://pixfill.dev/1920x1280/6A5ACD/ffffff");
+    --carrousel-1--large: url("https://pixfill.dev/1024x683/6A5ACD/ffffff");
+    --carrousel-1--medium-large: url("https://pixfill.dev/768x512/6A5ACD/ffffff");
+    --carrousel-1--medium: url("https://pixfill.dev/480x320/6A5ACD/ffffff");
+    --carrousel-1--thumb: url("https://pixfill.dev/300x200/6A5ACD/ffffff");
 
-    --carrousel-3--origin: url("https://dummyimage.com/300x200/B22222/FFFFFF&text=1920+x+1280");
-    --carrousel-3--large: url("https://dummyimage.com/300x200/B22222/FFFFFF&text=1024+x+683");
-    --carrousel-3--medium-large: url("https://dummyimage.com/300x200/B22222/FFFFFF&text=768+x+512");
-    --carrousel-3--medium: url("https://dummyimage.com/300x200/B22222/FFFFFF&text=480+x+320");
-    --carrousel-3--thumb: url("https://dummyimage.com/300x200/B22222/FFFFFF&text=300+x+200");
+    --carrousel-2--origin: url("https://pixfill.dev/1920x1280/6B8E23/ffffff");
+    --carrousel-2--large: url("https://pixfill.dev/1024x683/6B8E23/ffffff");
+    --carrousel-2--medium-large: url("https://pixfill.dev/768x512/6B8E23/ffffff");
+    --carrousel-2--medium: url("https://pixfill.dev/480x320/6B8E23/ffffff");
+    --carrousel-2--thumb: url("https://pixfill.dev/300x200/6B8E23/ffffff");
 
-    --carrousel-4--origin: url("https://dummyimage.com/300x200/BDB76B/FFFFFF&text=1920+x+1280");
-    --carrousel-4--large: url("https://dummyimage.com/300x200/BDB76B/FFFFFF&text=1024+x+683");
-    --carrousel-4--medium-large: url("https://dummyimage.com/300x200/BDB76B/FFFFFF&text=768+x+512");
-    --carrousel-4--medium: url("https://dummyimage.com/300x200/BDB76B/FFFFFF&text=480+x+320");
-    --carrousel-4--thumb: url("https://dummyimage.com/300x200/BDB76B/FFFFFF&text=300+x+200");
+    --carrousel-3--origin: url("https://pixfill.dev/1920x1280/B22222/ffffff");
+    --carrousel-3--large: url("https://pixfill.dev/1024x683/B22222/ffffff");
+    --carrousel-3--medium-large: url("https://pixfill.dev/768x512/B22222/ffffff");
+    --carrousel-3--medium: url("https://pixfill.dev/480x320/B22222/ffffff");
+    --carrousel-3--thumb: url("https://pixfill.dev/300x200/B22222/ffffff");
 
-    --carrousel-5--origin: url("https://dummyimage.com/300x200/808080/FFFFFF&text=1920+x+1280");
-    --carrousel-5--large: url("https://dummyimage.com/300x200/808080/FFFFFF&text=1024+x+683");
-    --carrousel-5--medium-large: url("https://dummyimage.com/300x200/808080/FFFFFF&text=768+x+512");
-    --carrousel-5--medium: url("https://dummyimage.com/300x200/808080/FFFFFF&text=480+x+320");
-    --carrousel-5--thumb: url("https://dummyimage.com/300x200/808080/FFFFFF&text=300+x+200");
+    --carrousel-4--origin: url("https://pixfill.dev/1920x1280/BDB76B/ffffff");
+    --carrousel-4--large: url("https://pixfill.dev/1024x683/BDB76B/ffffff");
+    --carrousel-4--medium-large: url("https://pixfill.dev/768x512/BDB76B/ffffff");
+    --carrousel-4--medium: url("https://pixfill.dev/480x320/BDB76B/ffffff");
+    --carrousel-4--thumb: url("https://pixfill.dev/300x200/BDB76B/ffffff");
 
-    --ratio-galeria: 9/6;
+    --carrousel-5--origin: url("https://pixfill.dev/1920x1280/808080/ffffff");
+    --carrousel-5--large: url("https://pixfill.dev/1024x683/808080/ffffff");
+    --carrousel-5--medium-large: url("https://pixfill.dev/768x512/808080/ffffff");
+    --carrousel-5--medium: url("https://pixfill.dev/480x320/808080/ffffff");
+    --carrousel-5--thumb: url("https://pixfill.dev/300x200/808080/ffffff");
+
+    --ratio-galeria: 3/2;
     --h-carrousel: 50vh;
 }
 

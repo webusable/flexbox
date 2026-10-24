@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 /* Visible a algunos lectores de pantalla */
 .oculto {
     display: none;

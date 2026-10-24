@@ -1,4 +1,4 @@
-/*!
+/*
  * Hover.css (http://ianlunn.github.io/Hover/)
  * Version: 2.3.2
  * Author: Ian Lunn @IanLunn
@@ -7,6 +7,7 @@
 
  * Hover.css Copyright Ian Lunn 2017. Generated with Sass.
  */
+
 /* 2D TRANSITIONS */
 /* Grow */
 .hvr-grow {
@@ -2270,7 +2271,11 @@
     height: 10px;
     width: 90%;
     opacity: 0;
-    background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 80%);
+    background: radial-gradient(
+        ellipse at center,
+        rgba(0, 0, 0, 0.35) 0%,
+        rgba(0, 0, 0, 0) 80%
+    );
     /* W3C */
     transition-duration: 0.3s;
     transition-property: transform, opacity;
@@ -2313,11 +2318,19 @@
 }
 .hvr-shadow-radial:before {
     bottom: 100%;
-    background: radial-gradient(ellipse at 50% 150%, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 80%);
+    background: radial-gradient(
+        ellipse at 50% 150%,
+        rgba(0, 0, 0, 0.6) 0%,
+        rgba(0, 0, 0, 0) 80%
+    );
 }
 .hvr-shadow-radial:after {
     top: 100%;
-    background: radial-gradient(ellipse at 50% -50%, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 80%);
+    background: radial-gradient(
+        ellipse at 50% -50%,
+        rgba(0, 0, 0, 0.6) 0%,
+        rgba(0, 0, 0, 0) 80%
+    );
 }
 .hvr-shadow-radial:hover:before,
 .hvr-shadow-radial:focus:before,
@@ -3600,7 +3613,13 @@
     left: 0;
     background: white;
     /* IE9 */
-    background: linear-gradient(135deg, white 45%, #aaa 50%, #ccc 56%, white 80%);
+    background: linear-gradient(
+        135deg,
+        white 45%,
+        #aaa 50%,
+        #ccc 56%,
+        white 80%
+    );
     filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#ffffff', endColorstr='#000000');
     /*For IE7-8-9*/
     z-index: 1000;
@@ -3633,7 +3652,13 @@
     right: 0;
     background: white;
     /* IE9 */
-    background: linear-gradient(225deg, white 45%, #aaa 50%, #ccc 56%, white 80%);
+    background: linear-gradient(
+        225deg,
+        white 45%,
+        #aaa 50%,
+        #ccc 56%,
+        white 80%
+    );
     box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.4);
     transition-duration: 0.3s;
     transition-property: width, height;
@@ -3663,7 +3688,13 @@
     right: 0;
     background: white;
     /* IE9 */
-    background: linear-gradient(315deg, white 45%, #aaa 50%, #ccc 56%, white 80%);
+    background: linear-gradient(
+        315deg,
+        white 45%,
+        #aaa 50%,
+        #ccc 56%,
+        white 80%
+    );
     box-shadow: -1px -1px 1px rgba(0, 0, 0, 0.4);
     transition-duration: 0.3s;
     transition-property: width, height;
@@ -3693,7 +3724,13 @@
     left: 0;
     background: white;
     /* IE9 */
-    background: linear-gradient(45deg, white 45%, #aaa 50%, #ccc 56%, white 80%);
+    background: linear-gradient(
+        45deg,
+        white 45%,
+        #aaa 50%,
+        #ccc 56%,
+        white 80%
+    );
     box-shadow: 1px -1px 1px rgba(0, 0, 0, 0.4);
     transition-duration: 0.3s;
     transition-property: width, height;

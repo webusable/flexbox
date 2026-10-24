@@ -1,5 +1,4 @@
 @charset "UTF-8";
-
 :root {
     /* Colores del sitio */
     --color-1: #aa3c39;
@@ -14,7 +13,6 @@
     --color-a--hover: #aa3c39;
 
     --bg-color--images: #222;
-    -
 
     /* Imágenes del sitio  */
     --banner--origin: url("../img/banner-origin.webp");
@@ -58,7 +56,6 @@
         by Hover.css
 */
 
-.wu-underline-from-center,
 a {
     display: inline-block;
     vertical-align: middle;
@@ -393,7 +390,7 @@ ul.galeria {
 
 header.portada {
     &::before {
-        background-image: var(--banner--medium);
+        background-image: var(--banner--large);
         filter: brightness(1) blur(2px) grayscale(0.8);
     }
 }
