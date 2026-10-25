@@ -1,0 +1,99 @@
+@charset "UTF-8";
+
+/* 
+    -----------------------------
+    --- Transiciones de color ---
+    -----------------------------
+*/
+
+/* Smooth color + shadow on hover */
+.wu-transicion-color {
+    width: 25vw;
+    height: 25vw;
+
+    background-color: steelblue;
+    box-shadow: none;
+
+    /* opacity: 0; */
+
+    /* Transiciones. Son 4: Opacidad, Color de fondo, ancho y sombra */
+    /* Transiciones. Son 3: Color de fondo, ancho y sombra */
+    transition:
+        opacity 2s ease,
+        background-color 2s ease,
+        width 2s ease,
+        box-shadow 2s ease;
+
+    &:hover {
+        width: 100%;
+        background-color: orange;
+        /* opacity: 1; */
+
+        /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); */
+        /* box-shadow: 1em 2em 1em rgba(0, 0, 0, 0.2); */
+        box-shadow:
+            rgba(200, 200, 0, 0.5) -5px -5px 20px 0px,
+            rgba(0, 0, 0, 0.5) 0px 13px 20px 0px,
+            rgba(200, 0, 0, 0.5) 8px -8px 10px 0px;
+    }
+}
+
+/*
+    ----------------------------------------
+    --- Galería de ejemplos de Transform ---
+    ----------------------------------------
+*/
+
+ul.transformers {
+    background: #fff;
+    border: 1px solid #d9deea;
+    border-radius: 12px;
+    padding: 1.2rem;
+    margin: 1rem 0;
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+
+    & li {
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.4rem;
+        padding: 2rem;
+        background: #eef2ff;
+        border-radius: 10px;
+        font-size: 0.8rem;
+        color: #55607a;
+
+        & span {
+            width: 5rem;
+            height: 5rem;
+            border-radius: 10px;
+            background: #2f5bff;
+            color: #fff;
+            display: grid;
+            place-items: center;
+            /* font-size: 0.75rem; */
+            font-weight: 700;
+
+            /* Transicion */
+            transition: transform 0.5s ease;
+        }
+
+        &:hover span {
+            &.translate {
+                /* transform: translateX(50px); */
+                transform: translate(2rem, 2rem);
+            }
+
+            &.rotate {
+                transform: rotate(45deg);
+            }
+
+            &.scale {
+                transform: scale(1.5);
+            }
+        }
+    }
+}
