@@ -52,41 +52,6 @@
 }
 
 /* 
-    --- Class: Underline From Center ---
-        by Hover.css
-*/
-
-a {
-    display: inline-block;
-    vertical-align: middle;
-    transform: perspective(1px) translateZ(0);
-    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-    position: relative;
-    overflow: hidden;
-
-    &::before {
-        content: "";
-        position: absolute;
-        z-index: -1;
-        left: 51%;
-        right: 51%;
-        bottom: 0;
-        background: var(--color-a--hover);
-        height: 4px;
-        transition-property: left, right;
-        transition-duration: 0.3s;
-        transition-timing-function: ease-out;
-    }
-
-    &:hover::before,
-    &:focus::before,
-    &:active::before {
-        left: 0;
-        right: 0;
-    }
-}
-
-/* 
     --- Clase de pruebas para la librería Hover.css
 */
 
@@ -101,6 +66,8 @@ a {
     background-size: cover;
     background-repeat: no-repeat;
 }
+
+/* Marca de agua con el logo del sitio */
 
 .agua {
     &::before {
@@ -122,6 +89,48 @@ a {
         background-size: contain;
 
         opacity: 0.2;
+    }
+}
+
+/* 
+    --- Class: Underline From Center ---
+        by Hover.css
+*/
+
+a:not(.no-border) {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    overflow: hidden;
+
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    transform: perspective(1px) translateZ(0);
+
+    &::before {
+        position: absolute;
+        content: "";
+        height: 2px;
+        z-index: -1;
+        left: 50%;
+        right: 50%;
+        bottom: 0;
+        background: var(--color-a--hover);
+
+        transition-property: left, right;
+        transition-duration: 0.3s;
+        transition-timing-function: ease-out;
+    }
+
+    &:focus,
+    &:target,
+    &:hover {
+        outline-width: 0;
+        color: var(--color-a--hover);
+
+        &::before {
+            left: 0;
+            right: 0;
+        }
     }
 }
 
