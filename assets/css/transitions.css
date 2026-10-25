@@ -45,54 +45,124 @@
 */
 
 ul.transformers {
-    background: #fff;
-    border: 1px solid #d9deea;
-    border-radius: 12px;
-    padding: 1.2rem;
-    margin: 1rem 0;
+    /* Parrilla flexbox */
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
     align-items: center;
     gap: 1.2rem;
-    flex-wrap: wrap;
+
+    margin: 1rem 0;
+    padding: 1.2rem;
+
+    background-color: #fff;
+    border: 1px solid lightgrey;
+    border-radius: 0.8rem;
 
     & li {
-        display: inline-flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 0.4rem;
-        padding: 2rem;
-        background: #eef2ff;
-        border-radius: 10px;
+        padding: 1.6rem 2.4rem;
+
+        text-align: center;
         font-size: 0.8rem;
-        color: #55607a;
+
+        background-color: ghostwhite;
+        border-radius: 0.7rem;
 
         & span {
-            width: 5rem;
-            height: 5rem;
-            border-radius: 10px;
-            background: #2f5bff;
-            color: #fff;
-            display: grid;
-            place-items: center;
-            /* font-size: 0.75rem; */
-            font-weight: 700;
-
-            /* Transicion */
-            transition: transform 0.5s ease;
+            /* background-color: lime; */
         }
 
-        &:hover span {
+        & figure {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 5rem;
+            height: 5rem;
+            margin-top: 0.5rem;
+
+            background-color: lime;
+            background-color: royalblue;
+            box-shadow: none;
+
+            border-radius: 5px;
+
+            & figcaption {
+                font-weight: 700;
+                font-size: larger;
+                color: #fff;
+            }
+        }
+    }
+
+    & li {
+        & figure {
+            transition:
+                transform 0.5s ease,
+                box-shadow 0.5s ease;
+        }
+
+        &:hover figure {
+            &.translateX {
+                transform: translateX(2rem);
+            }
+            &.translateY {
+                transform: translateY(2rem);
+            }
             &.translate {
-                /* transform: translateX(50px); */
                 transform: translate(2rem, 2rem);
             }
 
-            &.rotate {
+            &.rotate45 {
                 transform: rotate(45deg);
             }
+            &.rotate-90 {
+                transform: rotate(-90deg);
+            }
+            &.rotate360 {
+                transform: rotate(1turn);
+            }
 
+            &.scaleX {
+                transform: scaleX(1.5);
+            }
+            &.scaleY {
+                transform: scaleY(0.5);
+            }
             &.scale {
-                transform: scale(1.5);
+                transform: scale(1.2);
+            }
+
+            &.skewX {
+                transform: skewX(25deg);
+            }
+            &.skewY {
+                transform: skewY(25deg);
+            }
+            &.skew {
+                transform: skew(20deg, 10deg);
+            }
+
+            &.origin-center {
+                transform-origin: center;
+            }
+            &.origin-top-left {
+                transform-origin: top left;
+            }
+            &.origin-bottom-right {
+                transform-origin: bottom right;
+            }
+
+            &.translate-rotate {
+                transform: translateX(2rem) rotate(45deg);
+            }
+
+            &.rotate-translate {
+                transform: rotate(45deg) translateX(2rem);
+            }
+
+            &.combina3 {
+                transform: translateX(0.8rem) rotate(10deg) scale(1.2);
+                box-shadow: 0 1.25rem 2rem #00000080;
             }
         }
     }
