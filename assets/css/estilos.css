@@ -45,6 +45,36 @@
     --galeria-5--medium: url("../img/kuala-lumpur-medium.webp");
     --galeria-5--thumb: url("../img/kuala-lumpur-thumb.webp");
 
+    --carrousel-1--thumb: url("https://pixfill.dev/300x200/3b82f6/ffffff");
+    --carrousel-1--medium: url("https://pixfill.dev/480x320/3b82f6/ffffff");
+    --carrousel-1--medium-large: url("https://pixfill.dev/768x512/3b82f6/ffffff");
+    --carrousel-1--large: url("https://pixfill.dev/1024x683/3b82f6/ffffff");
+    --carrousel-1--full: url("https://pixfill.dev/1920x1280/3b82f6/ffffff");
+
+    --carrousel-2--thumb: url("https://pixfill.dev/300x200/bdc011/ffffff");
+    --carrousel-2--medium: url("https://pixfill.dev/480x320/bdc011/ffffff");
+    --carrousel-2--medium-large: url("https://pixfill.dev/768x512/bdc011/ffffff");
+    --carrousel-2--large: url("https://pixfill.dev/1024x683/bdc011/ffffff");
+    --carrousel-2--full: url("https://pixfill.dev/1920x1280/bdc011/ffffff");
+
+    --carrousel-3--thumb: url("https://pixfill.dev/300x200/d265b5/ffffff");
+    --carrousel-3--medium: url("https://pixfill.dev/480x320/d265b5/ffffff");
+    --carrousel-3--medium-large: url("https://pixfill.dev/768x512/d265b5/ffffff");
+    --carrousel-3--large: url("https://pixfill.dev/1024x683/d265b5/ffffff");
+    --carrousel-3--full: url("https://pixfill.dev/1920x1280/d265b5/ffffff");
+
+    --carrousel-4--thumb: url("https://pixfill.dev/300x200/3711c0/ffffff");
+    --carrousel-4--medium: url("https://pixfill.dev/480x320/3711c0/ffffff");
+    --carrousel-4--medium-large: url("https://pixfill.dev/768x512/3711c0/ffffff");
+    --carrousel-4--large: url("https://pixfill.dev/1024x683/3711c0/ffffff");
+    --carrousel-4--full: url("https://pixfill.dev/1920x1280/3711c0/ffffff");
+
+    --carrousel-5--thumb: url("https://pixfill.dev/300x200/11c09d/ffffff");
+    --carrousel-5--medium: url("https://pixfill.dev/480x320/11c09d/ffffff");
+    --carrousel-5--medium-large: url("https://pixfill.dev/768x512/11c09d/ffffff");
+    --carrousel-5--large: url("https://pixfill.dev/1024x683/11c09d/ffffff");
+    --carrousel-5--full: url("https://pixfill.dev/1920x1280/11c09d/ffffff");
+
     /* Logo */
     --logo-url: url("../svg/logo.svg");
     --logo-ratio: 248/165;
@@ -264,6 +294,25 @@ ul.galeria {
             &:hover::before {
                 transform: scale(1.2);
             }
+        }
+    }
+}
+
+article.carrousel-container {
+    min-height: 100vh;
+
+    & ul.carrousel {
+        margin: 0;
+        padding: 0;
+
+        list-style-type: none;
+
+        & li figure {
+            background-color: lime;
+        }
+
+        & li figure.diapositiva-1::before {
+            background-image: var(--carrousel-1--thumb);
         }
     }
 }
