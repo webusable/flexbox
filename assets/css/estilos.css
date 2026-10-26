@@ -302,17 +302,72 @@ article.carrousel-container {
     min-height: 100vh;
 
     & ul.carrousel {
+        display: flex;
+        width: 100%;
+        height: 30vh;
         margin: 0;
         padding: 0;
+        overflow: hidden;
 
         list-style-type: none;
 
-        & li figure {
-            background-color: lime;
+        border-radius: 0.8rem;
+        box-shadow: 1em 1em 1em #00000080;
+
+        &:hover li {
+            /* Pausar animación al pasar el cursor sobre la galería */
+            animation-play-state: paused;
         }
 
-        & li figure.diapositiva-1::before {
+        & li {
+            width: 100%;
+            height: 100%;
+
+            flex-shrink: 0;
+
+            animation: wuSimpleCarrousel 20s infinite ease-in-out;
+            will-change: transform;
+
+            & figure {
+                width: 100%;
+                height: 100%;
+
+                & figcaption {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    padding: 1rem;
+
+                    text-align: center;
+                    background: linear-gradient(to top, #00000080, transparent);
+                    color: #fff;
+
+                    text-shadow: 1px 1px 2px #000;
+                }
+            }
+        }
+    }
+
+    & ul.carrousel {
+        & li:nth-child(1) figure::before {
             background-image: var(--carrousel-1--thumb);
+        }
+
+        & li:nth-child(2) figure::before {
+            background-image: var(--carrousel-2--thumb);
+        }
+
+        & li:nth-child(3) figure::before {
+            background-image: var(--carrousel-3--thumb);
+        }
+
+        & li:nth-child(4) figure::before {
+            background-image: var(--carrousel-4--thumb);
+        }
+
+        & li:nth-child(5) figure::before {
+            background-image: var(--carrousel-5--thumb);
         }
     }
 }
@@ -484,5 +539,36 @@ header.portada {
                 background-image: var(--galeria-6--large);
             }
         }
+    }
+}
+
+@keyframes wuSimpleCarrousel {
+    0%,
+    15% {
+        transform: translate3d(0%, 0, 0);
+    }
+
+    20%,
+    35% {
+        transform: translate3d(-100%, 0, 0);
+    }
+
+    40%,
+    55% {
+        transform: translate3d(-200%, 0, 0);
+    }
+
+    60%,
+    75% {
+        transform: translate3d(-300%, 0, 0);
+    }
+
+    80%,
+    95% {
+        transform: translate3d(-400%, 0, 0);
+    }
+
+    100% {
+        transform: translate3d(0%, 0, 0);
     }
 }
