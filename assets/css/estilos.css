@@ -49,6 +49,13 @@
     --logo-url: url("../svg/logo.svg");
     --logo-ratio: 248/165;
     --marca-agua-h: 5rem;
+
+    --menu-bg: #1f2937;
+    --menu-bg-hover: #374151;
+    --menu-text: #ffffff;
+    --menu-accent: #fbbf24;
+    --menu-focus: #fbbf24;
+    --menu-padding: 0.75rem 1.25rem;
 }
 
 /* 
