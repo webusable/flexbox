@@ -348,28 +348,6 @@ article.carrousel-container {
             }
         }
     }
-
-    & ul.carrousel {
-        & li:nth-child(1) figure::before {
-            background-image: var(--carrousel-1--thumb);
-        }
-
-        & li:nth-child(2) figure::before {
-            background-image: var(--carrousel-2--thumb);
-        }
-
-        & li:nth-child(3) figure::before {
-            background-image: var(--carrousel-3--thumb);
-        }
-
-        & li:nth-child(4) figure::before {
-            background-image: var(--carrousel-4--thumb);
-        }
-
-        & li:nth-child(5) figure::before {
-            background-image: var(--carrousel-5--thumb);
-        }
-    }
 }
 
 .wu-button-queries {
@@ -570,5 +548,55 @@ header.portada {
 
     100% {
         transform: translate3d(0%, 0, 0);
+    }
+}
+
+article.carrousel-container {
+    & ul.carrousel {
+        & li:nth-child(1) figure::before {
+            background-image: var(--carrousel-1--thumb);
+        }
+
+        & li:nth-child(2) figure::before {
+            background-image: var(--carrousel-2--thumb);
+        }
+
+        & li:nth-child(3) figure::before {
+            background-image: var(--carrousel-3--thumb);
+        }
+
+        & li:nth-child(4) figure::before {
+            background-image: var(--carrousel-4--thumb);
+        }
+
+        & li:nth-child(5) figure::before {
+            background-image: var(--carrousel-5--thumb);
+        }
+    }
+}
+
+@media (min-width: 480px) {
+    article.carrousel-container {
+        & ul.carrousel {
+            & li:nth-child(1) figure::before {
+                background-image: var(--carrousel-1--medium);
+            }
+
+            & li:nth-child(2) figure::before {
+                background-image: var(--carrousel-2--medium);
+            }
+
+            & li:nth-child(3) figure::before {
+                background-image: var(--carrousel-3--medium);
+            }
+
+            & li:nth-child(4) figure::before {
+                background-image: var(--carrousel-4--medium);
+            }
+
+            & li:nth-child(5) figure::before {
+                background-image: var(--carrousel-5--medium);
+            }
+        }
     }
 }
