@@ -99,13 +99,65 @@ li,
 span {
     color: var(--color-texto);
 }
+/*
+    -----------------------------------------
+    --- Textos ----------
+    -----------------------------------------
+*/
+
+/* Font Size */
+html {
+    font-size: 16px;
+
+    & body {
+        line-height: 1.6;
+    }
+}
+
+h2 {
+    font-size: var(--font-size-xxxl);
+}
 
 h3 {
-    font-size: clamp(1.5rem, 1.25rem + 1.25vw, 2.25rem);
-    font-size: clamp(2rem, 1.5rem + 2.5vw, 3.5rem);
-
+    font-size: var(--font-size-xxl);
     color: var(--color-1);
 }
+
+h4 {
+    font-size: var(--font-size-xl);
+}
+h5 {
+    font-size: var(--font-size-l);
+}
+h6 {
+    font-size: var(--font-size-m);
+}
+
+p,
+ul,
+ol,
+li,
+a {
+    font-size: var(--font-size-m);
+}
+
+figcaption,
+small,
+footer ul li a {
+    font-size: var(--font-size-mini);
+}
+
+/*
+    -----------------------------------------
+    --- Fin de Textos ----------
+    -----------------------------------------
+*/
+
+/*
+    -----------------------------------------
+    --- Textos ----------
+    -----------------------------------------
+*/
 
 /* Ejemplo de uso de la pseudoclase :not() */
 ul:not(.enlaces-pdf) 

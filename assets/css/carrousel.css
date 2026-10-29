@@ -61,7 +61,8 @@ article.carrousel-container {
         /* Colocar todas las imágenes en la misma fila */
         display: flex;
         width: 100%;
-        height: var(--h-carrousel);
+        height: auto;
+        aspect-ratio: var(--ratio-carrousel);
         margin: 0;
         padding: 0;
         overflow: hidden;
