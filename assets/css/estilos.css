@@ -101,6 +101,9 @@ span {
 }
 
 h3 {
+    font-size: clamp(1.5rem, 1.25rem + 1.25vw, 2.25rem);
+    font-size: clamp(2rem, 1.5rem + 2.5vw, 3.5rem);
+
     color: var(--color-1);
 }
 
