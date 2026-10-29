@@ -1,0 +1,51 @@
+/* 
+    --- Clase de pruebas para la librería Hover.css
+*/
+.hover-css {
+    width: 15rem;
+    height: 8rem;
+    background-color: lime;
+
+    background-image: var(--galeria-2--thumb);
+
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.wu-button-queries {
+    padding: 4em 10em;
+    border-radius: 10px;
+
+    background: var(--color-1);
+    color: #fff;
+
+    &::before {
+        content: "@media (max-width: 599px)";
+    }
+}
+
+/* >= 600px de ancho del disposivo */
+@media (min-width: 600px) {
+    .wu-button-queries {
+        background: orange;
+
+        &::before {
+            content: "@media (min-width: 600px)";
+        }
+    }
+}
+
+@media (min-width: 1024px) {
+    .wu-button-queries {
+        background: blue;
+
+        &::before {
+            content: "@media (min-width: 1024px)";
+        }
+    }
+}
+
+article.galeria-flex {
+    background-color: lime;
+}

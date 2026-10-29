@@ -1,0 +1,91 @@
+:root {
+    /* Colores del sitio */
+    --color-1: #aa3c39;
+    --color-2: #557714;
+    --color-3: #226666;
+    --color-4: #003133;
+
+    --color-texto: #666;
+    --bg-body: #fefefe;
+
+    --color-a: #557714;
+    --color-a--hover: #aa3c39;
+
+    --bg-color--images: #222;
+
+    /* Imágenes del sitio  */
+    --banner--origin: url("../img/banner-origin.webp");
+    --banner--large: url("../img/banner-large.webp");
+    --banner--medium: url("../img/banner-medium.webp");
+    --banner--thumb: url("../img/banner-thumb.webp");
+
+    --galeria-1--origin: url("../img/libertad-origin.webp");
+    --galeria-1--large: url("../img/libertad-large.webp");
+    --galeria-1--medium: url("../img/libertad-medium.webp");
+    --galeria-1--thumb: url("../img/libertad-thumb.webp");
+
+    --galeria-2--origin: url("../img/bilbao-origin.webp");
+    --galeria-2--large: url("../img/bilbao-large.webp");
+    --galeria-2--medium: url("../img/bilbao-medium.webp");
+    --galeria-2--thumb: url("../img/bilbao-thumb.webp");
+
+    --galeria-3--origin: url("../img/chicago-origin.webp");
+    --galeria-3--large: url("../img/chicago-large.webp");
+    --galeria-3--medium: url("../img/chicago-medium.webp");
+    --galeria-3--thumb: url("../img/chicago-thumb.webp");
+
+    --galeria-4--origin: url("../img/dome-origin.webp");
+    --galeria-4--large: url("../img/dome-large.webp");
+    --galeria-4--medium: url("../img/dome-medium.webp");
+    --galeria-4--thumb: url("../img/dome-thumb.webp");
+
+    --galeria-5--origin: url("../img/kuala-lumpur-origin.webp");
+    --galeria-5--large: url("../img/kuala-lumpur-large.webp");
+    --galeria-5--medium: url("../img/kuala-lumpur-medium.webp");
+    --galeria-5--thumb: url("../img/kuala-lumpur-thumb.webp");
+
+    --carrousel-1--thumb: url("https://pixfill.dev/300x200/3b82f6/ffffff");
+    --carrousel-1--medium: url("https://pixfill.dev/480x320/3b82f6/ffffff");
+    --carrousel-1--medium-large: url("https://pixfill.dev/768x512/3b82f6/ffffff");
+    --carrousel-1--large: url("https://pixfill.dev/1024x683/3b82f6/ffffff");
+    --carrousel-1--full: url("https://pixfill.dev/1920x1280/3b82f6/ffffff");
+
+    --carrousel-2--thumb: url("https://pixfill.dev/300x200/bdc011/ffffff");
+    --carrousel-2--medium: url("https://pixfill.dev/480x320/bdc011/ffffff");
+    --carrousel-2--medium-large: url("https://pixfill.dev/768x512/bdc011/ffffff");
+    --carrousel-2--large: url("https://pixfill.dev/1024x683/bdc011/ffffff");
+    --carrousel-2--full: url("https://pixfill.dev/1920x1280/bdc011/ffffff");
+
+    --carrousel-3--thumb: url("https://pixfill.dev/300x200/d265b5/ffffff");
+    --carrousel-3--medium: url("https://pixfill.dev/480x320/d265b5/ffffff");
+    --carrousel-3--medium-large: url("https://pixfill.dev/768x512/d265b5/ffffff");
+    --carrousel-3--large: url("https://pixfill.dev/1024x683/d265b5/ffffff");
+    --carrousel-3--full: url("https://pixfill.dev/1920x1280/d265b5/ffffff");
+
+    --carrousel-4--thumb: url("https://pixfill.dev/300x200/3711c0/ffffff");
+    --carrousel-4--medium: url("https://pixfill.dev/480x320/3711c0/ffffff");
+    --carrousel-4--medium-large: url("https://pixfill.dev/768x512/3711c0/ffffff");
+    --carrousel-4--large: url("https://pixfill.dev/1024x683/3711c0/ffffff");
+    --carrousel-4--full: url("https://pixfill.dev/1920x1280/3711c0/ffffff");
+
+    --carrousel-5--thumb: url("https://pixfill.dev/300x200/11c09d/ffffff");
+    --carrousel-5--medium: url("https://pixfill.dev/480x320/11c09d/ffffff");
+    --carrousel-5--medium-large: url("https://pixfill.dev/768x512/11c09d/ffffff");
+    --carrousel-5--large: url("https://pixfill.dev/1024x683/11c09d/ffffff");
+    --carrousel-5--full: url("https://pixfill.dev/1920x1280/11c09d/ffffff");
+
+    /* Logo */
+    --logo-url: url("../svg/logo.svg");
+    --logo-ratio: 248/165;
+    --marca-agua-h: 5rem;
+
+    --menu-bg: #1f2937;
+    --menu-bg-hover: #374151;
+    --menu-text: #ffffff;
+    --menu-accent: #fbbf24;
+    --menu-focus: #fbbf24;
+    --menu-padding: 0.75rem 1.25rem;
+
+    --ratio-galeria: 3/2;
+    --h-carrousel: 50vh;
+}

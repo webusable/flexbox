@@ -1,0 +1,181 @@
+.img-before {
+    background-color: #222;
+    position: relative;
+
+    &::before {
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+}
+
+/*
+------------------------------------------
+    --- Galería de imágenes FlexBox --- 
+------------------------------------------
+*/
+
+/* Galería de imágenes Flex */
+ul.galeria {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1rem;
+
+    & li {
+        min-width: 20rem;
+        height: 15rem;
+        flex: 1;
+
+        & figure.img-before {
+            width: 100%;
+            height: 100%;
+
+            overflow: hidden;
+
+            &::before {
+                transition: transform 0.2s ease;
+            }
+
+            &:hover::before {
+                transform: scale(1.2);
+            }
+        }
+    }
+}
+
+/* Imagene por defecto. Mobile First */
+ul.galeria {
+    & .diapositiva-1 {
+        &::before {
+            background-image: var(--galeria-1--thumb);
+        }
+    }
+
+    & .diapositiva-2 {
+        &::before {
+            background-image: var(--galeria-2--thumb);
+        }
+    }
+    & .diapositiva-3 {
+        &::before {
+            background-image: var(--galeria-3--thumb);
+        }
+    }
+    & .diapositiva-4 {
+        &::before {
+            background-image: var(--galeria-4--thumb);
+        }
+    }
+    & .diapositiva-5 {
+        &::before {
+            background-image: var(--galeria-5--thumb);
+        }
+    }
+}
+
+@media (min-width: 600px) {
+    header.portada {
+        &::before {
+            background-image: var(--banner--large);
+        }
+    }
+}
+
+@media (min-width: 900px) {
+    header.portada {
+        &::before {
+            background-image: var(--banner--origin);
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    header.portada {
+        &::before {
+            background-image: var(--banner--thumb);
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    article.galeria-flex {
+        background-color: tomato;
+    }
+    /* ul.carrousel, */
+    ul.galeria {
+        & .diapositiva-1 {
+            &::before {
+                background-image: var(--galeria-1--medium);
+            }
+        }
+
+        & .diapositiva-2 {
+            &::before {
+                background-image: var(--galeria-2--medium);
+            }
+        }
+        & .diapositiva-3 {
+            &::before {
+                background-image: var(--galeria-3--medium);
+            }
+        }
+        & .diapositiva-4 {
+            &::before {
+                background-image: var(--galeria-4--medium);
+            }
+        }
+        & .diapositiva-5 {
+            &::before {
+                background-image: var(--galeria-5--medium);
+            }
+        }
+    }
+}
+
+@media (min-width: 1023px) {
+    article.galeria-flex {
+        background-color: transparent;
+    }
+    ul.galeria {
+        & .diapositiva-2 {
+            &::before {
+                background-image: var(--galeria-2--large);
+            }
+        }
+
+        & .diapositiva-3 {
+            &::before {
+                background-image: var(--galeria-3--large);
+            }
+        }
+        & .diapositiva-4 {
+            &::before {
+                background-image: var(--galeria-4--large);
+            }
+        }
+        & .diapositiva-5 {
+            &::before {
+                background-image: var(--galeria-5--large);
+            }
+        }
+        & .diapositiva-6 {
+            &::before {
+                background-image: var(--galeria-6--large);
+            }
+        }
+    }
+}
+
+/*
+-----------------------------------------------------
+    --- Fin de la Galería de imágenes FlexBox --- 
+-----------------------------------------------------
+*/

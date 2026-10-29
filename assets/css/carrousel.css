@@ -1,42 +1,5 @@
 @charset "UTF-8";
 
-:root {
-    /* Imágenes obtenidas gracias a https://pixfill.dev/ */
-
-    --carrousel-1--origin: url("https://pixfill.dev/1920x1280/6A5ACD/ffffff");
-    --carrousel-1--large: url("https://pixfill.dev/1024x683/6A5ACD/ffffff");
-    --carrousel-1--medium-large: url("https://pixfill.dev/768x512/6A5ACD/ffffff");
-    --carrousel-1--medium: url("https://pixfill.dev/480x320/6A5ACD/ffffff");
-    --carrousel-1--thumb: url("https://pixfill.dev/300x200/6A5ACD/ffffff");
-
-    --carrousel-2--origin: url("https://pixfill.dev/1920x1280/6B8E23/ffffff");
-    --carrousel-2--large: url("https://pixfill.dev/1024x683/6B8E23/ffffff");
-    --carrousel-2--medium-large: url("https://pixfill.dev/768x512/6B8E23/ffffff");
-    --carrousel-2--medium: url("https://pixfill.dev/480x320/6B8E23/ffffff");
-    --carrousel-2--thumb: url("https://pixfill.dev/300x200/6B8E23/ffffff");
-
-    --carrousel-3--origin: url("https://pixfill.dev/1920x1280/B22222/ffffff");
-    --carrousel-3--large: url("https://pixfill.dev/1024x683/B22222/ffffff");
-    --carrousel-3--medium-large: url("https://pixfill.dev/768x512/B22222/ffffff");
-    --carrousel-3--medium: url("https://pixfill.dev/480x320/B22222/ffffff");
-    --carrousel-3--thumb: url("https://pixfill.dev/300x200/B22222/ffffff");
-
-    --carrousel-4--origin: url("https://pixfill.dev/1920x1280/BDB76B/ffffff");
-    --carrousel-4--large: url("https://pixfill.dev/1024x683/BDB76B/ffffff");
-    --carrousel-4--medium-large: url("https://pixfill.dev/768x512/BDB76B/ffffff");
-    --carrousel-4--medium: url("https://pixfill.dev/480x320/BDB76B/ffffff");
-    --carrousel-4--thumb: url("https://pixfill.dev/300x200/BDB76B/ffffff");
-
-    --carrousel-5--origin: url("https://pixfill.dev/1920x1280/808080/ffffff");
-    --carrousel-5--large: url("https://pixfill.dev/1024x683/808080/ffffff");
-    --carrousel-5--medium-large: url("https://pixfill.dev/768x512/808080/ffffff");
-    --carrousel-5--medium: url("https://pixfill.dev/480x320/808080/ffffff");
-    --carrousel-5--thumb: url("https://pixfill.dev/300x200/808080/ffffff");
-
-    --ratio-galeria: 3/2;
-    --h-carrousel: 50vh;
-}
-
 /* 
     -------- Regla repetida -------
 
@@ -45,7 +8,6 @@
     Además así se entiende la lógiga de los ::before
 */
 
-/*
 .img-before {
     position: relative;
     background-color: #222;
@@ -63,7 +25,33 @@
         background-position: center;
     }
 }
-*/
+
+/* --- Keyframes para el desplazamiento con Flexbox --- */
+@keyframes wuSimpleCarrousel {
+    0%,
+    15% {
+        transform: translate3d(0%, 0, 0);
+    }
+    20%,
+    35% {
+        transform: translate3d(-100%, 0, 0);
+    }
+    40%,
+    55% {
+        transform: translate3d(-200%, 0, 0);
+    }
+    60%,
+    75% {
+        transform: translate3d(-300%, 0, 0);
+    }
+    80%,
+    95% {
+        transform: translate3d(-400%, 0, 0);
+    }
+    100% {
+        transform: translate3d(0%, 0, 0);
+    }
+}
 
 /* Maquetación */
 article.carrousel-container {
@@ -130,6 +118,31 @@ article.carrousel-container {
 
 /* Imágenes del carrousel */
 
+/* Animación */
+
+ul.carrousel {
+    & li {
+        /* Nombre duración y curva */
+        animation: wuSimpleCarrousel 20s infinite ease-in-out;
+
+        /* Avisa al navegador para que use la aceleración por GPU */
+        will-change: transform;
+    }
+
+    &:hover li {
+        /* Pausar animación al pasar el cursor sobre la galería */
+        animation-play-state: paused;
+    }
+}
+
+@media (orientation: landscape) {
+    article.carrousel-container {
+        & ul.carrousel {
+            width: 60%;
+        }
+    }
+}
+
 article.carrousel-container {
     ul.carrousel {
         /* Se comienza diseñando para el viewport menor*/
@@ -150,47 +163,108 @@ article.carrousel-container {
         }
     }
 }
+@media (min-width: 480px) {
+    article.carrousel-container {
+        & ul.carrousel {
+            & li:nth-child(1) figure::before {
+                background-image: var(--carrousel-1--medium);
+            }
 
-/* Animación */
+            & li:nth-child(2) figure::before {
+                background-image: var(--carrousel-2--medium);
+            }
 
-ul.carrousel {
-    & li {
-        /* Nombre duración y curva */
-        animation: wuSimpleCarrousel 20s infinite ease-in-out;
+            & li:nth-child(3) figure::before {
+                background-image: var(--carrousel-3--medium);
+            }
 
-        /* Avisa al navegador para que use la aceleración por GPU */
-        will-change: transform;
-    }
+            & li:nth-child(4) figure::before {
+                background-image: var(--carrousel-4--medium);
+            }
 
-    &:hover li {
-        /* Pausar animación al pasar el cursor sobre la galería */
-        animation-play-state: paused;
+            & li:nth-child(5) figure::before {
+                background-image: var(--carrousel-5--medium);
+            }
+        }
     }
 }
 
-/* --- Keyframes para el desplazamiento con Flexbox --- */
-@keyframes wuSimpleCarrousel {
-    0%,
-    15% {
-        transform: translate3d(0%, 0, 0);
+@media (min-width: 767px) {
+    article.carrousel-container {
+        & ul.carrousel {
+            width: 90%;
+            & li:nth-child(1) figure::before {
+                background-image: var(--carrousel-1--medium-large);
+            }
+
+            & li:nth-child(2) figure::before {
+                background-image: var(--carrousel-2--medium-large);
+            }
+
+            & li:nth-child(3) figure::before {
+                background-image: var(--carrousel-3--medium-large);
+            }
+
+            & li:nth-child(4) figure::before {
+                background-image: var(--carrousel-4--medium-large);
+            }
+
+            & li:nth-child(5) figure::before {
+                background-image: var(--carrousel-5--medium-large);
+            }
+        }
     }
-    20%,
-    35% {
-        transform: translate3d(-100%, 0, 0);
+}
+
+@media (min-width: 1024px) {
+    article.carrousel-container {
+        & ul.carrousel {
+            & li:nth-child(1) figure::before {
+                background-image: var(--carrousel-1--large);
+            }
+
+            & li:nth-child(2) figure::before {
+                background-image: var(--carrousel-2--large);
+            }
+
+            & li:nth-child(3) figure::before {
+                background-image: var(--carrousel-3--large);
+            }
+
+            & li:nth-child(4) figure::before {
+                background-image: var(--carrousel-4--large);
+            }
+
+            & li:nth-child(5) figure::before {
+                background-image: var(--carrousel-5--large);
+            }
+        }
     }
-    40%,
-    55% {
-        transform: translate3d(-200%, 0, 0);
-    }
-    60%,
-    75% {
-        transform: translate3d(-300%, 0, 0);
-    }
-    80%,
-    95% {
-        transform: translate3d(-400%, 0, 0);
-    }
-    100% {
-        transform: translate3d(0%, 0, 0);
+}
+
+@media (min-width: 1920px) {
+    article.carrousel-container {
+        & ul.carrousel {
+            width: 60%;
+            & li:nth-child(1) figure::before {
+                background-image: var(--carrousel-1--full);
+            }
+
+            & li:nth-child(2) figure::before {
+                background-image: var(--carrousel-2--full);
+            }
+
+            & li:nth-child(3) figure::before {
+                background-image: var(--carrousel-3--full);
+            }
+
+            & li:nth-child(4) figure::before {
+                background-image: var(--carrousel-4--full);
+            }
+
+            & li:nth-child(5) figure::before {
+                background-image: var(--carrousel-5--full);
+            }
+        }
     }
 }
