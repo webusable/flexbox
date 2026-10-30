@@ -22,34 +22,10 @@ main {
     min-height: 100vh;
 }
 
-main > section > article {
-    padding: 7.5vw;
-}
-
 figure {
     margin: 0;
 }
 
-/* Colores de los textos */
-
-body,
-p,
-li,
-span {
-    color: var(--color-texto);
-}
-
-/*
---------------------------------------
-        --- Textos ---
---------------------------------------
-*/
-
-/*
---------------------------------------
-        --- Fin de Textos ---
---------------------------------------
-*/
 /* 
 -------------------------------------------
         --- Cabecera del sitio  ---
@@ -78,14 +54,14 @@ body > header {
     align-items: center;
 
     /* To Do @media queries */
-    padding-left: 7.5vw;
+    /* padding-left: 7.5vw; */
 
     & a {
         & figure.logo {
             background-image: url("../svg/logo.svg");
             /* width: 4.20283rem; */
             height: 3rem;
-            width: calc(3rem * 242 / 160);
+            width: calc(3rem * var(--logo-ratio));
             /* aspect-ratio: 242/160; */
             margin: 0;
             /* margin-left: 1em; */
@@ -103,16 +79,8 @@ body > header {
 }
 
 body > nav {
-    left: 0;
+    /* left: 0; */
     width: 100%;
-    background-color: white;
-
-    /* To Do @media queries */
-    padding-right: 7.5vw;
-
-    & ul li a {
-        /* line-height: 3.5rem; */
-    }
 }
 
 body main {
@@ -130,6 +98,12 @@ body main {
         justify-content: space-between;
     }
 }
+
+/*
+
+
+
+*/
 
 /*
 body {
@@ -174,6 +148,68 @@ body main {
 -------------------------------------------------
         --- Fin de Cabecera del sitio  ---
 -------------------------------------------------
+*/
+
+/*
+-----------------------------------
+        --- Maquetación ---
+-----------------------------------
+*/
+
+body {
+    & > header {
+        padding-left: 4vw;
+    }
+
+    & nav.principal {
+        padding-right: 4vw;
+    }
+
+    & main > section > article {
+        padding: 5vh;
+        padding-left: 4vw;
+        padding-right: 4vw;
+    }
+}
+
+@media (min-width: 700px) {
+    body {
+        & > header {
+            padding-left: 7.5vw;
+        }
+
+        & nav.principal {
+            padding-right: 7.5vw;
+        }
+
+        & main > section > article {
+            padding-left: 7.5vw;
+            padding-right: 7.5vw;
+        }
+    }
+}
+
+@media (min-width: 1024px) {
+    body {
+        & > header {
+            padding-left: 10vw;
+        }
+
+        & nav.principal {
+            padding-right: 10vw;
+        }
+
+        & main > section > article {
+            padding-left: 10vw;
+            padding-right: 10vw;
+        }
+    }
+}
+
+/*
+----------------------------------------
+        --- Fin de Maquetación ---
+----------------------------------------
 */
 
 /*
