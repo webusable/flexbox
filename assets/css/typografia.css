@@ -1,0 +1,129 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: "HeroesLegend";
+    src: url("../fonts/HeroesLegend.ttf");
+}
+
+/* Resto */
+
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap'); */
+
+html {
+    font-family: "Montserrat", Verdana, Arial, sans-serif;
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Títulos */
+
+/* @import url('https://fonts.googleapis.com/css2?family=Grandstander:ital,wght@0,100..900;1,100..900&display=swap'); */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "HeroesLegend", Impact, "Arial Black", Times, serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: italic;
+
+    text-shadow: 1px 1px 1px #000;
+} 
+
+
+/* Font Size */
+html {
+    font-size: 16px;
+
+    & body {
+        font-size: 100%;
+        line-height: 1.6;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0 auto;
+}
+
+h2 {
+    font-size: var(--font-size-xxxl);
+}
+
+h3, h4, h5, h6 {
+    margin-bottom: 1.5em;
+}
+
+h3 {
+    font-size: var(--font-size-xxl);
+    color: var(--color-1);
+}
+
+h4 {
+    font-size: var(--font-size-xl);
+}
+h5 {
+    font-size: var(--font-size-l);
+}
+h6 {
+    font-size: var(--font-size-m);
+}
+
+h3 {
+    &::first-letter {
+        color: blue;
+    }
+}
+
+
+p,
+ul,
+ol,
+li,
+a {
+    font-size: var(--font-size-m);
+}
+
+figcaption,
+small,
+footer ul li a {
+    font-size: var(--font-size-s);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+p,
+ul,
+ol,
+li,
+a {
+    font-size: var(--font-size-m);
+}
+
+figcaption,
+small,
+footer ul li a {
+    font-size: var(--font-size-s);
+}
+
+}
