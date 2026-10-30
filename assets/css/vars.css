@@ -1,20 +1,4 @@
 :root {
-    /* Font Size */
-    --font-size-m: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
-    --font-size-s: clamp(0.875rem, 0.83rem + 0.2vw, 1rem);
-
-    /* h2 */
-    --font-size-xxxl: clamp(1.8rem, 1.6rem + 1.5vw, 2.6rem);
-    --font-size-xxl: clamp(1.6rem, 1.4rem + 1.5vw, 2.4rem);
-    /* h3 */
-    --font-size-xxl: clamp(1.6rem, 1.4rem + 1.5vw, 2.4rem);
-    /* h4 */
-    --font-size-xl: clamp(1.4rem, 1.2rem + 1.5vw, 2.2rem);
-    /* h5 */
-    --font-size-l: clamp(1.2rem, 1rem + 1.5vw, 2rem);
-    /* h6 */
-    /* --font-size-m */
-
     /* Colores del sitio */
     --color-1: #aa3c39;
     --color-2: #557714;
@@ -28,6 +12,21 @@
     --color-a--hover: #aa3c39;
 
     --bg-color--images: #222;
+
+    /* Fonts */
+    --font-size-m: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+    --font-size-s: clamp(0.875rem, 0.83rem + 0.2vw, 1rem);
+
+    /* h2 */
+    --font-size-xxxl: clamp(1.8rem, 1.6rem + 1.5vw, 2.6rem);
+    /* h3 */
+    --font-size-xxl: clamp(1.6rem, 1.4rem + 1.5vw, 2.4rem);
+    /* h4 */
+    --font-size-xl: clamp(1.4rem, 1.2rem + 1.5vw, 2.2rem);
+    /* h5 */
+    --font-size-l: clamp(1.2rem, 1rem + 1.5vw, 2rem);
+    /* h6 */
+    /* --font-size-m */
 
     /* Imágenes del sitio  */
     --banner--origin: url("../img/banner-origin.webp");
@@ -103,6 +102,6 @@
     --menu-padding: 0.75rem 1.25rem;
 
     --ratio-galeria: 3/2;
-    --h-carrousel: 50vh;
+    /* --h-carrousel: 50vh; */
     --ratio-carrousel: 3/2;
 }

@@ -1,6 +1,116 @@
 @charset "UTF-8";
 
-/* Marca de agua con el logo del sitio */
+/*
+----------------------------------
+    --- Selectores de tipo --- 
+----------------------------------
+*/
+
+/* Enlaces del sitio */
+a {
+    text-decoration: none;
+    color: var(--color-2);
+
+    &:hover {
+        color: var(--color-1);
+    }
+}
+
+/* Maquetación básica */
+
+main {
+    min-height: 100vh;
+}
+
+main > section > article {
+    padding: 7.5vw;
+}
+
+figure {
+    margin: 0;
+}
+
+/* Colores de los textos */
+
+body,
+p,
+li,
+span {
+    color: var(--color-texto);
+}
+
+/*
+--------------------------------------
+        --- Textos ---
+--------------------------------------
+*/
+
+/* Font Size */
+html {
+    font-size: 16px;
+
+    & body {
+        line-height: 1.6;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0 auto;
+}
+
+h2 {
+    font-size: var(--font-size-xxxl);
+}
+
+h3 {
+    font-size: var(--font-size-xxl);
+    color: var(--color-1);
+}
+
+h4 {
+    font-size: var(--font-size-xl);
+}
+h5 {
+    font-size: var(--font-size-l);
+}
+h6 {
+    font-size: var(--font-size-m);
+}
+
+p,
+ul,
+ol,
+li,
+a {
+    font-size: var(--font-size-m);
+}
+
+figcaption,
+small,
+footer ul li a {
+    font-size: var(--font-size-s);
+}
+
+/*
+--------------------------------------
+        --- Fin de Textos ---
+--------------------------------------
+*/
+
+/*
+------------------------------------
+    --- Selectores de clase ---
+------------------------------------
+*/
+
+/* 
+    --- Marca de agua con el logo del sitio  ---
+*/
 .agua {
     &::before {
         /* 
@@ -27,6 +137,8 @@
 /* 
     --- Class: Underline From Center ---
         by Hover.css
+
+        para todos los enlaces del sitio
 */
 
 a:not(.no-border) {
@@ -66,100 +178,6 @@ a:not(.no-border) {
     }
 }
 
-/*
-    --------------------------
-    --- Selectores de tipo --- 
-    --------------------------
-*/
-
-a {
-    text-decoration: none;
-    color: var(--color-2);
-
-    &:hover {
-        color: var(--color-1);
-    }
-}
-
-/* Maquetación básica */
-
-main {
-    min-height: 100vh;
-}
-
-main > section > article {
-    padding: 7.5vw;
-}
-
-/* Colores de los textos */
-
-body,
-p,
-li,
-span {
-    color: var(--color-texto);
-}
-
-/*
------------------------------------------
-    --- Textos ----------
------------------------------------------
-*/
-
-/* Font Size */
-html {
-    font-size: 16px;
-
-    & body {
-        line-height: 1.6;
-    }
-}
-
-h2 {
-    font-size: var(--font-size-xxxl);
-}
-
-h3 {
-    font-size: var(--font-size-xxl);
-    color: var(--color-1);
-}
-
-h4 {
-    font-size: var(--font-size-xl);
-}
-h5 {
-    font-size: var(--font-size-l);
-}
-h6 {
-    font-size: var(--font-size-m);
-}
-
-p,
-ul,
-ol,
-li,
-a {
-    font-size: var(--font-size-m);
-}
-
-figcaption,
-small,
-footer ul li a {
-    font-size: var(--font-size-mini);
-}
-
-/*
-    -----------------------------------------
-    --- Fin de Textos ----------
-    -----------------------------------------
-*/
-
-/*
-    ---------------------------
-    --- Selectores de clase ---
-    ---------------------------
-*/
-
 /* Ejemplo de uso de la pseudoclase :not() */
 ul:not(.enlaces-pdf) 
 /* ul */ {
@@ -168,6 +186,7 @@ ul:not(.enlaces-pdf)
     padding: 0;
 }
 
+/* line-height específico */
 ul.enlaces-pdf {
     & li {
         /* margin: 0.5em 0; */
@@ -175,9 +194,7 @@ ul.enlaces-pdf {
     }
 }
 
-figure {
-    margin: 0;
-}
+/* Provisional */
 
 header.portada {
     height: 40vh;

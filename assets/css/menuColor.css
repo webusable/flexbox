@@ -1,0 +1,313 @@
+/* ==========================================================================
+           1. RESET BÁSICO Y VARIABLES DE DISEÑO (Inspirado en Deputación de Lugo)
+           ========================================================================== */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --color-primary: #1b365d; /* Azul institucional */
+    --color-primary-dark: #122440; /* Azul más oscuro para hover/focus */
+    --color-accent: #0072ce; /* Azul vivo para acentos */
+    --color-text-light: #ffffff; /* Texto blanco */
+    --color-text-dark: #2c3e50; /* Texto para áreas secundarias */
+    --color-bg-light: #f4f6f9; /* Fondo claro de la web */
+    --color-border: rgba(255, 255, 255, 0.15);
+    --shadow-dropdown: 0 10px 25px rgba(0, 0, 0, 0.2);
+    --transition-speed: 0.3s;
+    --font-main: "Open Sans", system-ui, -apple-system, sans-serif;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--color-bg-light);
+    color: var(--color-text-dark);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Encabezado institucional de demostración */
+.site-header {
+    background-color: #ffffff;
+    border-bottom: 3px solid var(--color-primary);
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+    color: var(--color-primary);
+    font-weight: 700;
+    font-size: 1.25rem;
+}
+
+.brand-logo svg {
+    fill: var(--color-primary);
+    width: 36px;
+    height: 36px;
+}
+
+/* ==========================================================================
+           2. ESTILOS OBLIGATORIOS DEL MENÚ (PURE CSS CON EL HTML EXACTO SOLICITADO)
+           ========================================================================== */
+
+/* 2.1 Ocultar el checkbox por completo */
+nav.principal #icon-menu {
+    display: none !important;
+}
+
+/* 2.2 Accesibilidad: Ocultar visualmente la clase .pechado (Screen Reader Only) */
+nav.principal .pechado {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
+
+/* 2.3 Contenedor del Navegador Principal */
+nav.principal {
+    background-color: var(--color-primary);
+    width: 100%;
+    position: relative;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* 2.4 Botón de Hamburguesa en HTML (<label class="icon-menu">) - Oculto por defecto en escritorio */
+nav.principal .icon-menu {
+    display: none;
+    color: var(--color-text-light);
+    background-color: transparent;
+    padding: 0.9rem 1.25rem;
+    font-weight: 700;
+    font-size: 1.05rem;
+    cursor: pointer;
+    user-select: none;
+    align-items: center;
+    gap: 0.75rem;
+    transition: background-color var(--transition-speed) ease;
+}
+
+nav.principal .icon-menu:hover {
+    background-color: var(--color-primary-dark);
+}
+
+/* Creación del icono de hamburguesa con CSS puro usando ::before */
+nav.principal .icon-menu::before {
+    content: "";
+    display: inline-block;
+    width: 22px;
+    height: 2px;
+    background-color: var(--color-text-light);
+    box-shadow:
+        0 -6px 0 var(--color-text-light),
+        0 6px 0 var(--color-text-light);
+    transition: transform var(--transition-speed) ease;
+}
+
+/* 2.5 Estructura General de la Lista Principal */
+nav.principal > ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0 1rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Elementos principales del menú */
+nav.principal > ul > li {
+    position: relative;
+}
+
+/* Enlaces del Menú Principal */
+nav.principal a {
+    display: flex;
+    align-items: center;
+    padding: 1rem 1.25rem;
+    color: var(--color-text-light);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: 0.02em;
+    transition:
+        background-color var(--transition-speed) ease,
+        color var(--transition-speed) ease;
+    outline: none;
+}
+
+/* Indicador visual para items con submenú (Temas) */
+nav.principal > ul > li:has(ul) > a::after {
+    content: "▾";
+    margin-left: 0.5rem;
+    font-size: 0.8rem;
+    transition: transform var(--transition-speed) ease;
+}
+
+/* Estados de interacción para Escritorio */
+nav.principal a:hover,
+nav.principal a:focus {
+    background-color: var(--color-primary-dark);
+    color: #ffffff;
+}
+
+nav.principal a:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: -2px;
+}
+
+/* 2.6 Submenús Desplegables en Escritorio (Pure CSS Hover & Focus-Within) */
+nav.principal ul ul {
+    list-style: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 220px;
+    background-color: var(--color-primary-dark);
+    box-shadow: var(--shadow-dropdown);
+    border-top: 3px solid var(--color-accent);
+    border-radius: 0 0 6px 6px;
+
+    /* Animación suave de aparición */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(12px);
+    transition:
+        opacity var(--transition-speed) ease,
+        visibility var(--transition-speed) ease,
+        transform var(--transition-speed) ease;
+    z-index: 1001;
+}
+
+/* Despliegue en Escritorio usando :hover y :focus-within */
+nav.principal > ul > li:hover > ul,
+nav.principal > ul > li:focus-within > ul {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Rotar flecha al desplegar */
+nav.principal > ul > li:hover > a::after,
+nav.principal > ul > li:focus-within > a::after {
+    transform: rotate(180deg);
+}
+
+/* Estilos de los enlaces dentro del submenú */
+nav.principal ul ul a {
+    padding: 0.75rem 1.25rem;
+    font-size: 0.9rem;
+    border-bottom: 1px solid var(--color-border);
+    color: #e2e8f0;
+}
+
+nav.principal ul ul li:last-child a {
+    border-bottom: none;
+    border-radius: 0 0 6px 6px;
+}
+
+nav.principal ul ul a:hover,
+nav.principal ul ul a:focus {
+    background-color: var(--color-accent);
+    color: #ffffff;
+    padding-left: 1.5rem; /* Efecto sutil de desplazamiento hacia la derecha */
+}
+
+/* ==========================================================================
+           3. RESPONSIVE DESIGN (Pantallas móviles <= 768px)
+           ========================================================================== */
+@media screen and (max-width: 768px) {
+    /* Mostrar la etiqueta del menú hamburguesa */
+    nav.principal .icon-menu {
+        display: flex;
+    }
+
+    /* Ocultar por defecto la lista principal de enlaces en pantallas pequeñas */
+    nav.principal > ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        padding: 0;
+        background-color: var(--color-primary-dark);
+        border-top: 1px solid var(--color-border);
+    }
+
+    /* TRUCO PURE CSS: Desplegar el menú cuando el checkbox esté marcado (checked) */
+    nav.principal #icon-menu:checked ~ ul {
+        display: flex;
+        animation: slideDown 0.35s ease forwards;
+    }
+
+    /* Animación del botón hamburguesa al abrir */
+    nav.principal #icon-menu:checked ~ .icon-menu {
+        background-color: var(--color-primary-dark);
+    }
+
+    nav.principal #icon-menu:checked ~ .icon-menu::before {
+        transform: rotate(90deg);
+    }
+
+    /* Ajustes para los enlaces en menú desplegado en móvil */
+    nav.principal > ul > li {
+        width: 100%;
+        border-bottom: 1px solid var(--color-border);
+    }
+
+    nav.principal a {
+        padding: 0.9rem 1.5rem;
+        width: 100%;
+    }
+
+    /* Ajuste del Submenú en Móvil (Acordeón desplegado o integrado) */
+    nav.principal ul ul {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        box-shadow: none;
+        border-top: none;
+        border-radius: 0;
+        background-color: rgba(0, 0, 0, 0.25);
+        padding-left: 1rem;
+    }
+
+    nav.principal ul ul a {
+        padding-left: 2rem;
+    }
+
+    nav.principal ul ul a:hover,
+    nav.principal ul ul a:focus {
+        padding-left: 2.25rem;
+    }
+}
+
+/* Keyframes para una entrada suave del menú móvil */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
