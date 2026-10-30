@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 nav.principal {
     position: relative;
 
@@ -8,10 +10,19 @@ nav.principal {
         height: 1px;
         margin: -1px;
         padding: 0;
-        overflow: hidden;
         clip-path: inset(50%);
         white-space: nowrap;
         border: 0;
+        overflow: hidden;
+
+        position: absolute !important;
+        width: 1px !important;
+        height: 1px !important;
+        clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+        clip: rect(1px, 1px, 1px, 1px);
+        padding: 0 !important;
+        border: 0 !important;
+        overflow: hidden;
     }
 
     & ul {
@@ -26,20 +37,44 @@ nav.principal {
         text-decoration: none;
 
         &:focus-visible {
-            /* el color va en colores.css */
-            outline: 2px solid;
+            outline: 2px solid; /* el color va en colores.css */
             outline-offset: -2px;
         }
     }
 
     /* Botón hamburguesa (móvil) */
     & #icon-menu + label {
-        display: block;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.75rem; /* Espacio entre el icono y el texto opcional del label */
         line-height: 3.5rem;
         padding-inline: 1.5rem;
         font-weight: bold;
         cursor: pointer;
         user-select: none;
+
+        /* Generamos las tres líneas horizontales por defecto (Menú Cerrado) */
+        &::before {
+            content: "";
+            display: inline-block;
+            width: 1.25rem;
+            height: 1rem;
+            /* Patrón de líneas usando gradientes CSS puros */
+            background: linear-gradient(to bottom, currentColor 0%, currentColor 20%, transparent 20%, transparent 40%, currentColor 40%, currentColor 60%, transparent 60%, transparent 80%, currentColor 80%, currentColor 100%);
+        }
+    }
+
+    /* Cambiar el icono a flecha hacia abajo cuando el menú está abierto */
+    & #icon-menu:checked + label::before {
+        content: "";
+        /* Dibujamos una flecha hacia abajo usando un triángulo con border o clip-path */
+        width: 0.8rem;
+        height: 0.5rem;
+        background-color: currentColor;
+        /* Forma de flecha hacia abajo con clip-path */
+        clip-path: polygon(0 0, 100% 0, 50% 100%);
+        background: currentColor; /* Se adapta automáticamente al color del texto */
     }
 
     & #icon-menu:focus-visible + label {
@@ -47,7 +82,7 @@ nav.principal {
         outline-offset: -2px;
     }
 
-    /* Lista principal: cerrada en móvil hasta marcar el checkbox */
+    /* Lista principal: cerrada en móvil */
     & > ul {
         display: none;
         flex-direction: column;
@@ -58,14 +93,20 @@ nav.principal {
             border-bottom: 1px solid;
         }
 
-        /* Submenú móvil: siempre visible e indentado */
+        /* Submenú móvil: SIEMPRE ABIERTO */
         & ul {
+            display: flex;
+            flex-direction: column;
             padding-inline-start: 1rem;
 
             & li {
                 border-bottom: 0;
             }
         }
+
+        /* & li:is(:hover, :focus-within) > ul {
+            display: block;
+        } */
     }
 
     & #icon-menu:checked ~ ul {
@@ -94,7 +135,6 @@ nav.principal {
                     padding: 1rem;
                 }
 
-                /* Submenú flotante */
                 & > ul {
                     display: none;
                     position: absolute;
@@ -112,10 +152,28 @@ nav.principal {
                     }
                 }
 
-                /* Ratón y teclado */
                 &:is(:hover, :focus-within) > ul {
                     display: block;
                 }
+            }
+        }
+    }
+}
+
+nav.principal {
+    #icon-menu + label {
+        color: #fff;
+    }
+    background-color: #000;
+
+    & > ul {
+        background-color: #fff;
+
+        & li > ul {
+            background-color: var(--bg-submenu);
+
+            & > li > a {
+                color: #fff;
             }
         }
     }
